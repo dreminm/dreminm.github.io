@@ -24,59 +24,16 @@ defaults:
       tag: visible
       see_also: []
   - scope:
-      path: "_posts/codecs"
-    values:
-      permalink: /codecs/:categories/:title:output_ext
-      project: codecs
-  - scope:
-      path: "_posts/vqmt"
-    values:
-      permalink: /vqmt/:categories/:title:output_ext
-      project: vqmt
-      layout: "vqmt-post"
-  - scope:
-      path: "_posts/vqmt3d"
-    values:
-      permalink: /stereo_quality/:categories/:title:output_ext
-      project: vqmt3d
-  - scope:
       path: "_posts/benchmarks"
     values:
       permalink: /benchmarks/:categories/:title:output_ext
       project: benchmarks
-  - scope:
-      path: "_posts/filters"
-    values:
-      permalink: /video_filters/:categories/:title:output_ext
-      project: filters
-  - scope:
-      path: "_posts/saliency"
-    values:
-      permalink: /saliency/:categories/:title:output_ext
-      project: saliency
-  - scope:
-      path: "_posts/other"
-    values:
-      permalink: /other/:categories/:title:output_ext
-      project: other
-  - scope:
-      type: "projects"
-    values:
-      layout: "project"
-  - scope:
-      type: "subprojects"
-    values:
-      layout: "subproject"
-  - scope:
-      path: "about"
-    values:
-      layout: "about"
 
 # Build settings
 markdown: kramdown
 kramdown:
    math_engine: mathjax
-   
+
 theme: minima
 plugins:
   - jekyll-feed
