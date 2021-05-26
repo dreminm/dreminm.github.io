@@ -1,0 +1,50 @@
+image: ruby:2.5
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - vendor
+  key: "$CI_BUILD_REPO"
+
+before_script:
+  - apt-get update -qq
+  - apt-get install -qq rsync
+  - apt-get install -y locales
+  # Set locales
+  - echo "en_US UTF-8" > /etc/locale.gen
+  - locale-gen en_US.UTF-8
+  - export LANG=en_US.UTF-8
+  - export LANGUAGE=en_US:en
+  - export LC_ALL=en_US.UTF-8
+  # Setup SSH deploy key
+  - 'which ssh-agent || ( apt-get install -qq openssh-client )'
+  - eval $(ssh-agent -s)
+  - echo "$SSH_PRIVATE_KEY_B64" | tr -d ' ' | base64 -d | ssh-add -
+  # Ruby Bundler
+  - gem install bundler
+
+build_site:
+  stage: build
+  only:
+    - tags
+  script:
+    - bundle install --path=vendor
+    - export JEKYLL_ENV=production
+    - bundle exec jekyll build
+  artifacts:
+    paths:
+      - _site
+  tags:
+    - docker-linux
+
+deploy_site:
+  stage: deploy
+  only:
+    - tags
+  script:
+    - rsync -avz --checksum --delete -e 'ssh -o StrictHostKeyChecking=no -p 2222' _site/ $USER@$HOST:/home/compre16/videoprocessing.ml --exclude=.ftpquota --exclude=.well-known/ --exclude=.htaccess
+  tags:
+    - docker-linux

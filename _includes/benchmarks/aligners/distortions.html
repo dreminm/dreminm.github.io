@@ -1,0 +1,81 @@
+<div class="datatable-container">
+    <div class="datatable-center">
+        <table id="distortions-table" class="datatable display" style="background-color: #d4d4d4">
+            <thead>
+            <tr style="font-size: large; background-color: #3d6f96">
+                <th style="background-color: #3d6f96">Distortion type</th>
+                <th style="background-color: #3d6f96">Distortion</th>
+                <th style="background-color: #3d6f96">Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="item">
+                <td>Time distortions</td>
+                <td><ul>
+                    <li style="text-align:left">Drop frame</li>
+                    <li style="text-align:left">Duplicate/Freeze frame</li>
+                    <li style="text-align:left">Small time shift</li>
+                    <li style="text-align:left">Insert fragment</li>
+                    <li style="text-align:left">Drop fragment</li>
+                    <li style="text-align:left">Cut the entire video</li>
+                </ul></td>
+                <td><ul>
+                    <li style="text-align:left">Drop frame (with a probability of 40% first frame, with a probability of 40% last frame, with a probability of 20% random frame; with a probability of 1/3 1 or 2 frames, with a probability of 1/3 random number up to 10)</li>
+                    <li style="text-align:left">Duplication/Freeze frame (with a probability of 40% first frame, with a probability of 40% last frame, with a probability of 20% random frame;with probabilities of 1/3 1 or 2 frames, with a probability of 1/3 random number up to 10)</li>
+                    <li style="text-align:left">Cropping the beginning of the video (up to 11 frames) is applied in any case with a probability of 0.7, if it is True</li>
+                    <li style="text-align:left">Inserting a fragment (randomly selects a video from the dataset, randomly cuts it to ⅔ the original length, and inserts it in a random place of the distorted video)</li>
+                    <li style="text-align:left">Missing fragment (randomly select the length of the fragment <⅓ of the entire video and the location from which it will disappear)</li>
+                    <li style="text-align:left">Crop (randomly from ⅔ to ⅓ of the original length) + shift up to 250 frames from the initial frame</li>
+                </ul></td>
+            </tr>
+            <tr class="item">
+                <td>Geometric distortions</td>
+                <td><ul>
+                    <li style="text-align:left">Add logo</li>
+                    <li style="text-align:left">Add subtitles</li>
+                    <li style="text-align:left">Crop</li>
+                    <li style="text-align:left">Scaling</li>
+                </ul></td>
+                <td><ul>
+                    <li style="text-align:left">It is planned to have 15 sources of each type: Logo, News title</li>
+                    <li style="text-align:left">English language. Max 250 px from bottom or top</li>
+                    <li style="text-align:left">Crop to a ratio of 4:3 or 21:9. Then return to 16:9 by adding black bars</li>
+                    <li style="text-align:left">-</li>
+                </ul></td>
+            </tr>
+            <tr class="item">
+                <td>Color distortions</td>
+                <td><ul>
+                    <li style="text-align:left">Add noise</li>
+                    <li style="text-align:left">Add blur</li>
+                    <li style="text-align:left">Add random brightness&contrast</li>
+                </ul></td>
+                <td><ul>
+                    <li style="text-align:left">Uniform or normal distribution</li>
+                    <li style="text-align:left">Gaussian blur with kernel 3x3</li>
+                    <li style="text-align:left">Random decrease to 33%</li>
+                </ul></td>
+            </tr>
+            </tbody>
+
+        </table>
+        <script>
+            $(document).ready(function () {
+                $('#distortions-table').DataTable({
+                    lengthChange: false,
+                    paging: false,
+                    searching: false
+                });
+            });
+        </script>
+    </div>
+</div>
+<div id="div1-distortions-distribution-wrapper" class="mobile-plots">
+    <div id="div1-distortions-distribution" class="highcharts-figure"></div>
+</div>
+<div id="div2-distortions-distribution-wrapper" class="mobile-plots">
+    <div id="div2-distortions-distribution" class="highcharts-figure"></div>
+</div>
+<div id="div3-distortions-distribution-wrapper" class="mobile-plots">
+    <div id="div3-distortions-distribution" class="highcharts-figure"></div>
+</div>

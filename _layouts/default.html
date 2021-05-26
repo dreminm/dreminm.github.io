@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% if site.google_analytics and jekyll.environment == 'production' %}
+    {% include google_analytics.html %}
+    {% endif %}
+    <link href="/assets/favicon/icon128.png" rel="icon" sizes="128x128" type="image/png">
+    <link href="/assets/favicon/icon64.png" rel="icon" sizes="64x64" type="image/png">
+    <link href="/assets/favicon/icon32.png" rel="icon" sizes="32x32" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+    {% endif %}
+    <link href="/assets/css/common.css" rel="stylesheet" type="text/css">
+    <script src="/assets/js/interface.js"></script>
+</head>
+<body>
+{% include header.html %}
+<div class="content">
+    {{ content }}
+</div>
+{% include footer.html %}
+</body>
+</html>

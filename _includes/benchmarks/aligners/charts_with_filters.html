@@ -1,0 +1,106 @@
+<details close><summary>Click to show charts with filters:</summary>
+    <p>Distortions :</p>
+    <div>
+        <label>
+            <input type="radio" id="all-distortions" class="option-input radio" name="example" checked/>
+            All
+        </label>
+        <label>
+            <input type="radio" id="concrete-distortions" class="option-input radio" name="example"/>
+            Concrete
+        </label>
+    </div>
+    <div id="distortions-block">
+        <p>Time distortions:</p>
+        <label>
+            <input type="checkbox" id="fps_drop" class="distortions-filter checkbox" />
+            Drop frames
+        </label>
+        <label>
+            <input type="checkbox" id="fps_freeze" class="distortions-filter checkbox" />
+            Freeze/duplicate frames
+        </label>
+        <label>
+            <input type="checkbox" id="shift" class="distortions-filter checkbox" />
+            Shift
+        </label>
+        <label>
+            <input type="checkbox" id="cut_video" class="distortions-filter checkbox" />
+            Cut video
+        </label>
+        <label>
+            <input type="checkbox" id="drop_fragment" class="distortions-filter checkbox" />
+            Drop fragment
+        </label>
+        <label>
+            <input type="checkbox" id="insert_fragment" class="distortions-filter checkbox" />
+            Insert fragment
+        </label>
+        <br>
+        <p>Geometric distortions:</p>
+        <label>
+            <input type="checkbox" id="add_logo" class="distortions-filter checkbox" />
+            Add logo
+        </label>
+        <label>
+            <input type="checkbox" id="add_subtitles" class="distortions-filter checkbox" />
+            Add subtitles
+        </label>
+        <label>
+            <input type="checkbox" id="add_crop" class="distortions-filter checkbox" />
+            Crop
+        </label>
+        <label>
+            <input type="checkbox" id="add_graphics" class="distortions-filter checkbox" />
+            Add graphics
+        </label>
+        <label>
+            <input type="checkbox" id="add_datamoshing" class="distortions-filter checkbox" />
+            Add datamoshing
+        </label>
+        <label>
+            <input type="checkbox" id="add_watermark" class="distortions-filter checkbox" />
+            Add watermark
+        </label>
+        <br>
+        <p>Color distortions:</p>
+        <label>
+            <input type="checkbox" id="add_noise" class="distortions-filter checkbox" />
+            Add noise
+        </label>
+        <label>
+            <input type="checkbox" id="add_blur" class="distortions-filter checkbox" />
+            Add blur
+        </label>
+        <label>
+            <input type="checkbox" id="add_gamma" class="distortions-filter checkbox" />
+            Add gamma_cor
+        </label>
+        <label>
+            <input type="checkbox" id="rbr" class="distortions-filter checkbox" />
+            Add random brightness&contrast
+        </label>
+        <br>
+        <br>
+        <button id="submit-distortions" type="button">Allow</button>
+    </div>
+    <div id="div1-time-shift-filters-wrapper" class="mobile-plots">
+        <div id="div1-time-shift-filters" class="highcharts-figure"></div>
+    </div>
+    <div id="div2-f1-filters-wrapper" class="mobile-plots">
+        <div id="div2-f1-filters" class="highcharts-figure"></div>
+    </div>
+    <div id="div3-f1-filters-wrapper" class="mobile-plots">
+        <div id="div3-f1-filters" class="highcharts-figure"></div>
+    </div>
+    <div id="div1-time-shift-test-wrapper" class="mobile-plots">
+        <div id="div1-time-shift-test" class="highcharts-figure"></div>
+    </div>
+    <div id="div2-f1-test-wrapper" class="mobile-plots">
+        <div id="div2-f1-test" class="highcharts-figure"></div>
+    </div>
+    <div id="div3-f1-test-wrapper" class="mobile-plots">
+        <div id="div3-f1-test" class="highcharts-figure"></div>
+    </div>
+</details>
+<script src="/assets/js/benchmarks/aligners/highcharts/charts_with_filters.js"></script>

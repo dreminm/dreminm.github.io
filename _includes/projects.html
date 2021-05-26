@@ -1,0 +1,12 @@
+{% assign projects = site.projects | sort: 'order' %}
+{% for project in projects %}
+<li>
+    <a href="
+            {% if project.external_url %}
+                {{ project.external_url }}" target="_blank
+            {% else %}
+                {{ project.url }}
+            {% endif %}"
+    >{{ project.title }}</a>
+</li>
+{% endfor %}

@@ -1,0 +1,52 @@
+<div class="datatable-container">
+    <div class="datatable-center">
+        <table id="divisions-and-presets-table" class="datatable display" style="background-color: #d4d4d4">
+            <thead>
+            <tr style="font-size: large; background-color: #3d6f96">
+                <th  style="background-color: #3d6f96">Division</th>
+                <th  style="background-color: #3d6f96">Used time distortions</th>
+                <th  style="background-color: #3d6f96">Metrics</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="item">
+                <td>Local time distortions</td>
+                <td><ul>
+                    <li style="text-align:left">Drop frame</li>
+                    <li style="text-align:left">Duplicate frame</li>
+                    <li style="text-align:left">Freeze frame</li>
+                    <li style="text-align:left">Small time shift</li>
+                </ul></td>
+                <td>Accuracy(%) of correctly localized time_shifts depending on maximum accepted error in frames/</td>
+            </tr>
+            <tr class="item">
+                <td>Global time distortions</td>
+                <td><ul>
+                    <li style="text-align:left">Insert fragment</li>
+                    <li style="text-align:left">Drop fragment</li>
+                    <li style="text-align:left">Cut the entire video</li>
+                </ul></td>
+                <td>F1-score</td>
+            </tr>
+            <tr class="item">
+                <td>Mixed time distortions</td>
+                <td style="text-align:left">All time distortions</td>
+                <td>F1-score</td>
+            </tr>
+            </tbody>
+
+        </table>
+
+
+        <script>
+            $(document).ready(function () {
+                $('#divisions-and-presets-table').DataTable({
+                    lengthChange: false,
+                    paging: false,
+                    searching: false,
+                    sorting: false,
+                });
+            });
+        </script>
+    </div>
+</div>

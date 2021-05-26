@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-15281510-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      gtag('config', 'UA-15281510-2');
+    </script>
+    <link href="/assets/favicon/icon128.png" rel="icon" sizes="128x128" type="image/png">
+    <link href="/assets/favicon/icon64.png" rel="icon" sizes="64x64" type="image/png">
+    <link href="/assets/favicon/icon32.png" rel="icon" sizes="32x32" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>MSU Perceptual Video Quality Tool</title>
+    <link href="/assets/css/common.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/vqmt/vqmt.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/assets/js/vqmt/interface.js"></script>
+  </head>
+  <body>
+    <ul class="navbar">
+      <li class="navbar-header">
+        <a href="/"><img alt="Main page" class="logo" src="/assets/img/logo.svg"></a>
+        <a class="menu-toggle-button">
+          <div class="icon"></div>
+        </a>
+      </li>
+      <li>
+        <a href="/projects/">Projects <img class="dropdown-icon" src="/assets/icons/dropdown.svg"></a>
+        <ul class="dropmenu">
+          <li>
+            <a href="
+            
+                /codecs/
+            "
+    >Codecs Comparison & Optimization</a>
+          </li>
+          <li>
+            <a href="
+            
+                /vqmt/
+            "
+    >VQMT</a>
+          </li>
+          <li>
+            <a href="
+            
+                /video_filters/
+            "
+    >Video Filters</a>
+          </li>
+          <li>
+            <a href="
+            
+                /stereo_quality/
+            "
+    >Video Quality Measurement Tool 3D</a>
+          </li>
+          <li>
+            <a href="
+            
+                /saliency/
+            "
+    >Semiautomatic Visual-Attention Modeling</a>
+          </li>
+          <li>
+            <a href="
+            
+                https://videocompletion.org/" target="_blank
+            "
+    >Video Completion</a>
+          </li>
+          <li>
+            <a href="
+            
+                https://videomatting.com/" target="_blank
+            "
+    >Video Matting</a>
+          </li>
+          <li>
+            <a href="
+            
+                /benchmarks/
+            "
+    >MSU Benchmark Collection</a>
+          </li>
+          <li>
+            <a href="
+            
+                /other/
+            "
+    >Other projects</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="/publications/">Publications</a></li>
+      <li><a href="/companies/">For companies</a></li>
+      <li><a href="/about/">About us</a></li>
+      <li><a href="/contacts/">Contacts</a></li>
+    </ul>
+    <div class="content">
+      <link href="/assets/css/post.css" rel="stylesheet" type="text/css">
+      <div class="tiles-width nav-current">
+        <a href="/index.html">Main page</a> &mdash;
+        <a href="/vqmt/">VQMT</a>
+      </div>
+      <div class="tiles-width markdown article">
+        <h1 id="msu-perceptual-video-quality-tool">MSU Perceptual Video Quality Tool</h1>
+        <div class="center">
+          <embed src="/assets/img/vqmt/pvqt-info/pvqt_100.png" />
+        </div>
+        <p>Easy subjective video testing organization for companies and universities</p>
+        <ul>
+          <li>Projects, ideas: Dr. Dmitriy Vatolin</li>
+          <li>Implementation: Oleg Petrov, Georgy Osipov</li>
+        </ul>
+        <p>How to make subjective video quality comparison with MSU PVQT:</p>
+        <ol>
+          <li>
+            <p>Collect materials for the test</p>
+            <p>We support more than 300 video formats and all main image formats</p>
+            <p>See <a href="/vqmt/pvqt.html#materials">Recommendations on
+                materials</a>.</p>
+          </li>
+          <li>
+            <p>Choose method and create test with PVQT Editor</p>
+            <p>Now we support DSIS, DSCQS I and II, SCACJ, SAMVIQ from ITU-R BT.500
+              and EBU</p>
+            <p>See <a href="/vqmt/pvqt.html#methods">Methods’
+                brief</a>.</p>
+          </li>
+          <li>
+            <p>Invite observers and organize tests with PVQT Player</p>
+            <p>Observers can pass test in local network, in specially prepared room
+              or individually. ITU-R BT.500 recommends at least 15 observers to
+              complete the test. If you need observers to test your videos,
+              please, <a href="mailto:video-measure@compression.ru">mail us</a></p>
+            <p>See <a href="/vqmt/pvqt.html#organization">Test organization
+                variants</a>.</p>
+          </li>
+          <li>
+            <p>Collect and process results</p>
+            <p>You see results in real-time in most cases. Statistical estimates as
+              well as Bradley-Terry model results for pairwise comparison are
+              available in PVQT</p>
+            <p>See <a href="http://compression.ru/video/quality_measure/src/MSU_PVQT_Documentation.pdf">Result inspection section in
+                documentation</a>.</p>
+          </li>
+        </ol>
+        <p>PVQT 2.0 FREE licenses for BETA testing: <a href="/vqmt/pvqt.html#downloads">Get
+            now!</a></p>
+        <p>remains to the end of 6-month BETA-testing</p>
+        <p>Table of contents:</p>
+        <ul>
+          <li><a href="/vqmt/pvqt.html#basic">How to use
+              PVQT</a></li>
+          <li><a href="/vqmt/pvqt.html#features">Main Features
+              overview</a></li>
+          <li><a href="/vqmt/pvqt.html#downloads">Downloads</a></li>
+          <li><a href="/vqmt/pvqt.html#methods">Methods’
+              brief</a></li>
+          <li><a href="/vqmt/pvqt.html#organization">Organization of
+              testing</a></li>
+          <li><a href="/vqmt/pvqt.html#changelog">Changelog</a></li>
+        </ul>
+        <h2 id="how-to-use-pvqt">How to use PVQT</h2>
+        <div class="center">
+          <img src="/assets/img/vqmt/pvqt-info/mainwnd-p.svg" alt="PVQT main window" />
+        </div>
+        <h3 id="what-is-pvqt">What is PVQT?</h3>
+        <p>PVQT is a tool, developed by MSU Graphics &amp; Media Lab.
+          Video Group for evaluating of subjective quality (with reference or
+          without one) of a video and image files.</p>
+        <p>The tool was developed according to ITU-R BT.500
+          “Methodology for the subjective assessment of the quality of television
+          pictures”. The program does not exactly repeat the standard, as it is
+          focused on the measurement of quality for television, but PVQT is aimed
+          for quality measure of digital materials. Also, it has some additional
+          features not described in the standard.</p>
+        <h3 id="pvqt-structure">PVQT structure</h3>
+        <p>PVQT consists of 2 basic parts:</p>
+        <ul>
+          <li>Editor (MSU PVQT) — for creating a test and
+            collecting results (see section <em>Creating a test</em> in
+            <a href="http://compression.ru/video/quality_measure/src/MSU_PVQT_Documentation.pdf">Documentation</a>),</li>
+          <li>Player (MSU PVQT Player) — for performing
+            (playing) test by observer or operator in case of Network test (see
+            section <em>Passing a test</em> in
+            <a href="http://compression.ru/video/quality_measure/src/MSU_PVQT_Documentation.pdf">Documentation</a>).</li>
+        </ul>
+        <p><span id="materials"></span></p>
+        <h3 id="materials-selection">Materials selection</h3>
+        <p>To create PVQT test you need one or more groups of source files. The
+          source files can be videos or images: PVQT supports all basic video and
+          image formats. Each group consists of different versions of one picture,
+          which will be compared with another picture of that group. Group can
+          have a reference. In that case all pictures will be compared to the
+          reference. Without reference there can be pairwise comparison with SCACJ
+          method.</p>
+        <p>ITU-R BT.500 recommends videos to be at most 10 s length. In case of
+          images, you can tune duration that the image displays. Whole test should
+          be no longer 30 m including voting, training questions and period
+          between videos. You can have several sessions with breaks, each for 30
+          minutes. See ITU-R BT.500 for details.</p>
+        <p><span id="features"></span></p>
+        <h2 id="main-features-overview">Main Features overview</h2>
+        <style>
+          .features{
+                		display:flex;
+                		flex-wrap: wrap;
+                	}
+          .features>div{
+              width: 33%;
+              padding: 1rem;
+              margin-bottom: 1rem;
+              box-sizing: border-box;
+          
+              color: #9da1c3;
+              font-size: 90%;
+          
+              border-top-left-radius: 30px;
+              background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd…B5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI3ZzZ2cpIiAvPjwvc3ZnPg==);
+              background-image: -webkit-repeating-linear-gradient(top left,rgba(165, 165, 251, 0.56) 0%,rgba(0, 0, 0, 0) 40%,rgba(0, 0, 0, 0) 100%);
+              background-image: repeating-linear-gradient(to bottom right,rgba(165, 165, 251, 0.56) 0%,rgba(0, 0, 0, 0) 40%,rgba(0, 0, 0, 0) 100%);
+              background-image: -ms-repeating-linear-gradient(top left,rgba(165, 165, 251, 0.56) 0%,rgba(0, 0, 0, 0) 40%,rgba(0, 0, 0, 0) 100%);
+              }
+          .features>div.future{
+              background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd…B5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI3ZzZ2cpIiAvPjwvc3ZnPg==);
+              background-image: -webkit-repeating-linear-gradient(top left,rgba(200, 200, 200, 0.56) 0%,rgba(0, 0, 0, 0) 40%,rgba(0, 0, 0, 0) 100%);
+              background-image: repeating-linear-gradient(to bottom right,rgba(200, 200, 200, 0.56) 0%,rgba(0, 0, 0, 0) 40%,rgba(0, 0, 0, 0) 100%);
+              background-image: -ms-repeating-linear-gradient(top left,rgba(200, 200, 200, 0.56) 0%,rgba(0, 0, 0, 0) 40%,rgba(0, 0, 0, 0) 100%);
+              }
+          .features>div>div:first-child{
+              color: black;
+              margin-bottom: 4px;
+              font-size: 110%;
+          }
+          .features>div.future>div:first-child:after{
+              content: '*';
+              color: red;
+          }
+        </style>
+        <div class="features">
+          <div>
+            <div>Main ITU-R and BTU methods</div>
+             DSIS, DSCQS I and II, SCACJ, SAMVIQ</div>
+          <div>
+            <div>300+ Video and all Main Image Formats</div>
+             All popular video codecs, including HEVC</div>
+          <div>
+            <div>Real-Time result observation</div>
+             Convenient control of all test passes in real-time</div>
+          <div>
+            <div>No-reference pairwise methods</div>
+             Use SCACJ to collect pairwise results, you don't need to have references for this method</div>
+          <div>
+            <div>Confidence interval calculation</div>
+             Automatic calculation of mean, standard deviation, confidence interval</div>
+          <div>
+            <div>Results table</div>
+             View breaf results with information about each observer or detailed results in summary table</div>
+          <div>
+            <div>Bradley-Terry model</div>
+             Automatic estimation of Bradley-Terry ranks for pairwise comparison</div>
+          <div>
+            <div>Several techniques of test organization</div>
+             Observers can view test in classroom, individually, or simultaneously</div>
+          <div>
+            <div>LAN test passing</div>
+             Use shared folders to pass test on different computers without any copying operations</div>
+          <div>
+            <div>Video playback bufferization</div>
+             Playback has a tunable bufferization to avoid video lags</div>
+          <div>
+            <div>Smart diagnostic</div>
+             PVQT performs checks for standard compatibility and for possible problems, all you see in message window</div>
+          <div>
+            <div>Fast checking of test</div>
+             PVQT performs test checking before each run. This prevents test failure in middle of progress</div>
+          <div>
+            <div>Continuation of test</div>
+             You can continue a test interrupted due to tech problem, power failure or by request without loss of progress</div>
+          <div>
+            <div>Training questions</div>
+             Adjust the number of training questions, which helps observer to stabilize opinion and understand the task</div>
+          <div>
+            <div>See on big screen, TV or projector</div>
+             Control test on one monitor, see on big screen, TV or projector. PVQT has built-in multiscreen support</div>
+          <div>
+            <div>Fast debug</div>
+             Debug test to check it, run test immediately from Editor</div>
+          <div>
+            <div>Test estimates</div>
+             PVQT calculates estimated time of test and number of questions</div>
+          <div>
+            <div>Grouping</div>
+             Use multiple sequences in one task. Observer shouldn't see variants of only one sequence</div>
+          <div>
+            <div>Result collecting via E-Mail</div>
+             In case of distributed observers test you can collect results via E-Mails</div>
+          <div>
+            <div>JSON support</div>
+             PVQT saves a detailed protocol in JSON format for each test pass</div>
+          <div class="future">
+            <div>Online test</div>
+             Any number of observers take the test simultaneously, each on their mobile device. They're looking at the material on the big screen. No additional mobile applications needed to install</div>
+          <div class="future">
+            <div>Custom tests</div>
+             Customize the wording of the question, instructions, way of passing the test. Add any number of questions. You can use custom tests for paired, reference comparison, or to view single videos</div>
+          <div class="future">
+            <div>Result collecting via FTP</div>
+             In case of distributed observers, results can be automatically uploaded to FTP server. Test manager chooses a folder and login settings</div>
+        </div>
+        <p><span style="color:red">*</span> available in experimental version</p>
+        <p><span id="downloads"></span></p>
+        <h3 id="downloads">Downloads</h3>
+        <div class="center" style="text-align: center">
+          <table border="1">
+            <colgroup>
+              <col style="width: 35%" />
+              <col style="width: 20%" />
+              <col style="width: 15%" />
+              <col style="width: 5%" />
+              <col style="width: 25%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>File</th>
+                <th>Edition</th>
+                <th>Content</th>
+                <th>Price</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="odd">
+                <td><a href="http://compression.ru/video/quality_measure/files/free/MSU_PVQT_2.1r12075BETA_pro_64.exe">MSU_PVQT_2.1r12075BETA_pro_64.exe</a> (recommended)</td>
+                <td>Experimental 6-month</td>
+                <td>Player &amp; Editor</td>
+                <td>FREE</td>
+                <td>Windows Installer 64-Bit</td>
+              </tr>
+              <tr class="even">
+                <td><a href="http://compression.ru/video/quality_measure/files/free/MSU_PVQT_Player_2.1r12075BETA_pro_64.exe">MSU_PVQT_Player_2.1r12075BETA_pro_64.exe</a></td>
+                <td>Experimental 6-month</td>
+                <td>Player</td>
+                <td>FREE</td>
+                <td>Windows Installer 64-Bit</td>
+              </tr>
+              <tr class="odd">
+                <td><a href="http://compression.ru/video/quality_measure/files/free/MSU_PVQT_2.0r12033BETA_pro_32.exe">MSU_PVQT_2.0r12033BETA_pro_32.exe</a></td>
+                <td>BETA 6-month</td>
+                <td>Player &amp; Editor</td>
+                <td>FREE</td>
+                <td>Windows Installer 32-Bit</td>
+              </tr>
+              <tr class="even">
+                <td><a href="http://compression.ru/video/quality_measure/files/free/MSU_PVQT_Player_2.0r12033BETA_pro_32.exe">MSU_PVQT_Player_2.0r12033BETA_pro_32.exe</a></td>
+                <td>BETA 6-month</td>
+                <td>Player</td>
+                <td>FREE</td>
+                <td>Windows Installer 32-Bit</td>
+              </tr>
+              <tr class="odd">
+                <td><a href="http://compression.ru/video/quality_measure/src/MSU_PVQT_Documentation.pdf">MSU_PVQT_Documentation.pdf</a></td>
+                <td>–</td>
+                <td>Documentation</td>
+                <td>FREE</td>
+                <td>PDF document</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><span id="methods"></span></p>
+        <h2 id="methods-brief">Methods’ brief</h2>
+        <ul>
+          <li>
+            <p><strong>DSIS — Double Stimulus Impairment Scale</strong></p>
+            <p>Videos are shown consequently in pairs: first video is the reference
+              (observer is informed about it), second video is an impaired.</p>
+          </li>
+        </ul>
+        <div class="center">
+          <embed src="/assets/img/vqmt/pvqt-info/DSIS.png" />
+        </div>
+        <ul>
+          <li>
+            <p><strong>DSCQS I — Double Stimulus Continuous Quality Scale Type I</strong></p>
+            <p>In one playback window observer is free to switch
+              between two videos. One of videos is the reference one, but an observer
+              is not informed about it.</p>
+          </li>
+        </ul>
+        <div class="center">
+          <embed src="/assets/img/vqmt/pvqt-info/DSCQS-I.png" />
+        </div>
+        <ul>
+          <li>
+            <p><strong>DSCQS II — Double Stimulus Continuous Quality Scale Type II</strong></p>
+            <p>Videos are played simultaneously (side-by-side) a
+              given amount of times (repetitions), one is the reference one, but an
+              observer is not informed about it.</p>
+          </li>
+        </ul>
+        <div class="center">
+          <embed src="/assets/img/vqmt/pvqt-info/DSCQS-II.png" />
+        </div>
+        <ul>
+          <li>
+            <p><strong>SCACJ — Quality evaluation using categorical scale</strong></p>
+            <p>Two videos are shown simultaneously, after playback observer is asked
+              about his opinion.</p>
+            <p>You do not need to have references for this test. Pairwise results will
+              be processed according to Bradley-Terry model.</p>
+          </li>
+        </ul>
+        <div class="center">
+          <embed src="/assets/img/vqmt/pvqt-info/SCACJ-1.png" />
+        </div>
+        <div class="center">
+          <embed src="/assets/img/vqmt/pvqt-info/SCACJ-2.png" />
+        </div>
+        <ul>
+          <li>
+            <p><strong>SAMVIQ — Subjective Assessment Method for
+                Video Quality evaluation</strong></p>
+            <p>Observer is able to play any sequence
+              from the test set and give it mark, plus observer is able to play
+              reference video.</p>
+          </li>
+        </ul>
+        <div class="center">
+          <embed src="/assets/img/vqmt/pvqt-info/SAMVIQ.png" />
+        </div>
+        <p><span id="organization"></span></p>
+        <h2 id="organization-of-testing">Organization of testing</h2>
+        <ul>
+          <li>
+            <p><strong>Single computer testing</strong></p>
+            <p>All observers
+              pass a test on the same computer. No additional preparations are needed.
+              It can be the computer on which test was created, or project correctly
+              transmitted to another computer. We recommend install PVQT player (or
+              full PVQT) to that computer and run test from Windows Explorer.</p>
+          </li>
+        </ul>
+        <div class="center">
+          <embed src="/assets/img/vqmt/pvqt-info/pass-queue.svg" />
+        </div>
+        <ul>
+          <li>
+            <p><strong>Testing via shared folder</strong></p>
+            <p>In this method, the test can be run by an arbitrary number of observers
+              simultaneously or not on computers on the same local network, for
+              example, in a computer class. The test manager can view the results in
+              real time.</p>
+            <p>Edit and save project to location available to another computers via
+              shared folder. You should use “Relative paths” and all videos should be
+              also available via same shared folder or be referred in project by
+              network path.</p>
+            <p>Multiple observers can pass test simultaneously (for example, in
+              computer class). If Editor for this project file is opened you can see
+              progress and results of each observer in Real-time. Also, it will
+              display overall progress in summary.</p>
+          </li>
+        </ul>
+        <div class="center">
+          <embed src="/assets/img/vqmt/pvqt-info/pass-lan.svg" />
+        </div>
+        <ul>
+          <li>
+            <p><strong>Testing with distributed observers</strong></p>
+            <p>In this method, you are sending test and videos to observers, located
+              anywhere, who will pass the test at any time. After test is complete,
+              observers will send you back results of testing.</p>
+            <p>To use this method, specify email in field “Result collecting e-mail”.
+              After test is finished, observer will be asked to send a special archive
+              (*.pvqtres) file to that email.</p>
+            <p>After you collect some archives from observers, you can import them into
+              PVQT using “Import results from *.pvqtres file” command (project should
+              be saved). You can import multiple files at once.</p>
+          </li>
+        </ul>
+        <div class="center">
+          <embed src="/assets/img/vqmt/pvqt-info/pass-distributed.svg" />
+        </div>
+        <ul>
+          <li>
+            <p><strong>Testing using mass view</strong></p>
+            <p>This method will be implemented in the next version of PVQT.</p>
+            <p>You choose to show the video on a large screen, for example, through a
+              projector that is viewed by several observers. Each of them votes on
+              their device.</p>
+          </li>
+        </ul>
+        <div class="center">
+          <embed src="/assets/img/vqmt/pvqt-info/pass-network.svg" />
+        </div>
+        <p><span id="changelog"></span></p>
+        <h2 id="changelog">Changelog</h2>
+        <ul>
+          <li>Version 2.0 BETA
+            <ul>
+              <li>Completely new utility</li>
+              <li>A lot of new features</li>
+            </ul>
+          </li>
+          <li>Version 1.0
+            <ul>
+              <li>DSCQS type II added</li>
+              <li>Bugfixing</li>
+            </ul>
+          </li>
+          <li>Version 0.9
+            <ul>
+              <li>DSCQS, DSIS and SAMVIQ added</li>
+              <li>AviSynth support</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="contacts">Contacts</h2>
+        <p>E-mail: <a href="mailto:video-measure@compression.ru">video-measure@compression.ru</a></p>
+      </div>
+      <div class="tiles-width meta">
+        <div class="share">
+          <link href="/assets/css/sharing-buttons.css" rel="stylesheet" type="text/css">
+          <!-- Sharingbutton Twitter -->
+          <a class="resp-sharing-button__link"
+   href="https://twitter.com/intent/tweet/?text=MSU Perceptual Video Quality Tool&amp;url=
+https://videoprocessing.ml/vqmt/pvqt.html
+"
+   target="_blank" rel="noopener" aria-label="">
+            <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/>
+              </svg>
+            </div>
+          </a>
+          <!-- Sharingbutton Telegram -->
+          <a aria-label=""
+   class="resp-sharing-button__link"
+   href="https://telegram.me/share/url?text=MSU Perceptual Video Quality Tool&amp;url=
+https://videoprocessing.ml/vqmt/pvqt.html
+" rel="noopener" target="_blank">
+            <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M.707 8.475C.275 8.64 0 9.508 0 9.508s.284.867.718 1.03l5.09 1.897 1.986 6.38a1.102 1.102 0 0 0 1.75.527l2.96-2.41a.405.405 0 0 1 .494-.013l5.34 3.87a1.1 1.1 0 0 0 1.046.135 1.1 1.1 0 0 0 .682-.803l3.91-18.795A1.102 1.102 0 0 0 22.5.075L.706 8.475z"/>
+              </svg>
+            </div>
+          </a>
+          <!-- Sharingbutton Facebook -->
+          <a aria-label=""
+   class="resp-sharing-button__link"
+   href="https://facebook.com/sharer/sharer.php?u=
+https://videoprocessing.ml/vqmt/pvqt.html
+" rel="noopener"
+   target="_blank">
+            <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
+              </svg>
+            </div>
+          </a>
+          <!-- Sharingbutton E-Mail -->
+          <a class="resp-sharing-button__link"
+   href="mailto:?subject=MSU Perceptual Video Quality Tool&amp;body=
+https://videoprocessing.ml/vqmt/pvqt.html
+" target="_self" rel="noopener"
+   aria-label="">
+            <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/>
+              </svg>
+            </div>
+          </a>
+          <!-- Sharingbutton LinkedIn -->
+          <a class="resp-sharing-button__link"
+   href="https://www.linkedin.com/shareArticle?mini=true&amp;url=
+https://videoprocessing.ml/vqmt/pvqt.html
+&amp;title=MSU Perceptual Video Quality Tool&amp;summary=MSU Perceptual Video Quality Tool&amp;source=
+https://videoprocessing.ml/vqmt/pvqt.html
+"
+   target="_blank" rel="noopener" aria-label="">
+            <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"/>
+              </svg>
+            </div>
+          </a>
+        </div>
+        <span class="date">16 Oct 2018</span>
+      </div>
+      <div class="tiles-width separator"></div>
+      <div class="tiles-width see-also-title">
+        See Also
+      </div>
+      <div class="tiles wide">
+        <a class="tile" href="/benchmarks/aligners.html">
+          <div class="image" style="background-image: url(/assets/img/benchmarks/aligners/kdpv.gif)"></div>
+          <div class="title">MSU Video alignment and retrieval Benchmark</div>
+          <div class="text"></div>
+        </a>
+        <a class="tile" href="/vqmt/online-help-13-0/picture-types/">
+          <div class="image" style="background-image: url(/assets/img/vqmt/online-help/cover.svg)"></div>
+          <div class="title">MSU Video Quality Measurement Tool: Picture types</div>
+          <div class="text">VQMT 13.0 Online help: List of all picture types available in VQMT and their aliases</div>
+        </a>
+        <a class="tile" href="/vqmt/online-help-13-0/metrics/">
+          <div class="image" style="background-image: url(/assets/img/vqmt/online-help/cover.svg)"></div>
+          <div class="title">MSU Video Quality Measurement Tool: Usage of VQMT metrics in CLI</div>
+          <div class="text">VQMT 13.0 Online help: Description of VQMT metrics, their parameters and using in CLI</div>
+        </a>
+        <a class="tile" href="/vqmt/online-help-13-0/info/">
+          <div class="image" style="background-image: url(/assets/img/vqmt/online-help/cover.svg)"></div>
+          <div class="title">MSU Video Quality Measurement Tool: VQMT various lists and tables</div>
+          <div class="text">VQMT 13.0 Online help: Information about VQMT visualization formats, read modes, etc...</div>
+        </a>
+        <a class="tile" href="/vqmt/online-help-13-0/help/">
+          <div class="image" style="background-image: url(/assets/img/vqmt/online-help/cover.svg)"></div>
+          <div class="title">MSU Video Quality Measurement Tool: Command-line help</div>
+          <div class="text">VQMT 13.0 Online help: Information about all VQMT CLI options for Pro/Premium versions</div>
+        </a>
+        <a class="tile" href="/vqmt/online-help-13-0/config/">
+          <div class="image" style="background-image: url(/assets/img/vqmt/online-help/cover.svg)"></div>
+          <div class="title">MSU Video Quality Measurement Tool: Configuration description</div>
+          <div class="text">VQMT 13.0 Online help: Description of the format of the VQMT configuration file</div>
+        </a>
+      </div>
+      <div class="tiles-width separator"></div>
+      <div class="tiles-width markdown site-structure">
+        <span class="title">Site structure</span>
+        <ul>
+          <li>
+            <a href="
+                    /codecs/
+                 ">Codecs Comparison & Optimization</a>
+            <ul>
+              <li><a href="/codecs/avc/">AVC codecs comparison</a></li>
+              <li><a href="/codecs/hevc/">HEVC codecs comparison</a></li>
+              <li><a href="/codecs/image/">Image codecs comparison</a></li>
+              <li><a href="/codecs/lossless/">Lossless codecs comparison</a></li>
+              <li><a href="/codecs/optimization/">Codecs optimization and tuning</a></li>
+              <li><a href="/codecs/reports/">All codecs comparison reports</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="
+                    /vqmt/
+                 ">VQMT</a>
+            <ul>
+              <li><a href="/vqmt/plugins/">VQMT plugins</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="
+                    /video_filters/
+                 ">Video Filters</a>
+            <ul>
+              <li><a href="/video_filters/image/">Image processing Filters</a></li>
+              <li><a href="/video_filters/public/">Free Filters</a></li>
+              <li><a href="/video_filters/virtualdub/">VirtualDub Filters</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="
+                    /stereo_quality/
+                 ">Video Quality Measurement Tool 3D</a>
+            <ul>
+              <li><a href="/stereo_quality/correction/">Stereo artifacts correction</a></li>
+              <li><a href="/stereo_quality/metrics/">Stereo quality metrics</a></li>
+              <li><a href="/stereo_quality/reports/">All stereo quality reports</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="
+                    /saliency/
+                 ">Semiautomatic Visual-Attention Modeling</a>
+            <ul>
+            </ul>
+          </li>
+          <li>
+            <a href="
+                    https://videocompletion.org/" target="_blank
+                 ">Video Completion</a>
+            <ul>
+            </ul>
+          </li>
+          <li>
+            <a href="
+                    https://videomatting.com/" target="_blank
+                 ">Video Matting</a>
+            <ul>
+            </ul>
+          </li>
+          <li>
+            <a href="
+                    /benchmarks/
+                 ">MSU Benchmark Collection</a>
+            <ul>
+            </ul>
+          </li>
+          <li>
+            <a href="
+                    /other/
+                 ">Other projects</a>
+            <ul>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-column copyright">
+        <img alt="MSU Graphics & Multimedia Lab Video Group" class="logo" src="/assets/img/logo.svg">
+        <div class="text">
+          MSU Graphics & Media Lab Video Group
+          <br>
+          2019&ndash;2020
+        </div>
+      </div>
+      <div class="footer-column">
+        <ul>
+          <li>
+            <a href="
+            
+                /codecs/
+            "
+    >Codecs Comparison & Optimization</a>
+          </li>
+          <li>
+            <a href="
+            
+                /vqmt/
+            "
+    >VQMT</a>
+          </li>
+          <li>
+            <a href="
+            
+                /video_filters/
+            "
+    >Video Filters</a>
+          </li>
+          <li>
+            <a href="
+            
+                /stereo_quality/
+            "
+    >Video Quality Measurement Tool 3D</a>
+          </li>
+          <li>
+            <a href="
+            
+                /saliency/
+            "
+    >Semiautomatic Visual-Attention Modeling</a>
+          </li>
+          <li>
+            <a href="
+            
+                https://videocompletion.org/" target="_blank
+            "
+    >Video Completion</a>
+          </li>
+          <li>
+            <a href="
+            
+                https://videomatting.com/" target="_blank
+            "
+    >Video Matting</a>
+          </li>
+          <li>
+            <a href="
+            
+                /benchmarks/
+            "
+    >MSU Benchmark Collection</a>
+          </li>
+          <li>
+            <a href="
+            
+                /other/
+            "
+    >Other projects</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <ul>
+          <li><a href="/about/">About us</a></li>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="/publications/">Publications</a></li>
+          <li><a href="/companies/">For companies</a></li>
+          <li><a href="/contacts/">Contacts</a></li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        extensions: [
+          "MathMenu.js",
+          "MathZoom.js",
+          "AssistiveMML.js",
+          "a11y/accessibility-menu.js"
+        ],
+        jax: ["input/TeX", "output/CommonHTML"],
+        TeX: {
+          extensions: [
+            "AMSmath.js",
+            "AMSsymbols.js",
+            "noErrors.js",
+            "noUndefined.js",
+          ]
+        }
+      });
+    </script>
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  </body>
+</html>
