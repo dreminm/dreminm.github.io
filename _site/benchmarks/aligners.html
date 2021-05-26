@@ -98,7 +98,6 @@
         <a href="/benchmarks/">MSU Benchmark Collection</a>
       </div>
       <div class="tiles-width markdown article">
-        <link rel="stylesheet" href="/assets/css/benchmarks/aligners/style.css" />
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -107,6 +106,7 @@
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css" />
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+        <link rel="stylesheet" href="/assets/css/benchmarks/aligners/style.css" />
         <style>
           .subproject-links {
               display: flex;
@@ -131,20 +131,16 @@
               background-color: #e0e0e0;
               text-decoration: none;
           }
-          
-          table.deint {
-              display: table;
-          }
         </style>
         <div class="subproject-links">
           <a href="/benchmarks/aligners.html" class="button">Home</a>
           <a href="#overview" class="button">Overview</a>
           <a href="#participate" class="button">How to participate</a>
         </div>
-        <h1 class="center" id="msu-video-alignment-and-retrieval-benchmark--selecting-the-best-video-alignmentretrieval-algorithm-for-your-specific-task">MSU Video Alignment and Retrieval Benchmark — selecting the best video alignment/retrieval algorithm for your specific task</h1>
-        <h2 class="center" id="the-most-overall-and-comprehensive-comparison-of-video-alignment-and-retrieval-techniques">The most overall and comprehensive comparison of video alignment and retrieval techniques</h2>
+        <h1 class="center" id="msu-video-alignment-and-retrieval-benchmark-suite">MSU Video Alignment and Retrieval Benchmark Suite</h1>
+        <h2 class="center" id="explore-the-best-algorithms-in-different-video-alignment-tasks">Explore the best algorithms in different video alignment tasks</h2>
         <div class="center">
-          <img src="/assets/img/benchmarks/aligners/kdpv.gif" />
+          <img style="width:100%" src="/assets/img/benchmarks/aligners/kdpv.gif" />
         </div>
         <h2 id="whats-new">What’s new</h2>
         <ul>
@@ -155,10 +151,10 @@
           <li><strong>The most diverse dataset</strong> for alignment of near-duplicate videos testing:
             <ul>
               <li>_ test pairs with a total duration of _ minutes</li>
-              <li>Combinations of <strong>13 frequent distortions</strong> obtained due to human/machine video editing and processing</li>
+              <li>Combinations of <strong><a href="#distortions">13 frequent distortions</a></strong> obtained due to human/machine video editing and processing</li>
             </ul>
           </li>
-          <li><strong>Test your method on our benchmark divisions:</strong>
+          <li><strong>Test your method on our <a href="#benchmarks">benchmarks:</a></strong>
             <ul>
               <li><strong>Local time distortions:</strong> occurs due to video processing</li>
               <li><strong>Global time distortions:</strong> occurs due to video editing</li>
@@ -167,28 +163,65 @@
           </li>
           <li><strong>Find the best method</strong> for your near-duplicate video alignment requirements:
             <ul>
-              <li>Each part contains three distortion presets representing use cases with different difficulty</li>
+              <li>Each part contains &lt;a href=””&gt;three distortion presets&lt;/a&gt; representing use cases with different difficulty</li>
             </ul>
           </li>
         </ul>
         <p>To submit your method, please, follow several simple steps in the the <a href="#participate">Algorithm Submission</a> section</p>
         <p>We appreciate new ideas. Please, write us an e-mail to <a href="mailto:aligners-benchmark@videoprocessing.ai">aligners-benchmark@videoprocessing.ai</a></p>
         <h2 id="evaluation">Evaluation</h2>
-        <h3 id="leaderboard">Leaderboard</h3>
+        <h3 id="local-time-distortions">Local time distortions</h3>
+        <p style="font-weight: bold">Leaderboard</p>
         <div class="datatable-container">
           <div class="datatable-center">
-            <table id="time-shift-table" class="datatable display" style="background-color: #d4d4d4">
+            <table id="local-table" class="table-fixed" style="background-color: #d4d4d4">
               <thead>
                 <tr style="font-size: large; background-color: #3d6f96">
-                  <th style="background-color: #3d6f96">Name</th>
-                  <th style="background-color: #3d6f96">0 frame error Accuracy</th>
-                  <th style="background-color: #3d6f96">3 frame error Accuracy</th>
-                  <th style="background-color: #3d6f96">10 frame error Accuracy</th>
+                  <th rowspan="2" style="background-color: #3d6f96">Name</th>
+                  <th colspan="3" style="background-color: #3d6f96">Light preset</th>
+                  <th colspan="3" style="background-color: #3d6f96">Medium-1 preset</th>
+                  <th colspan="3" style="background-color: #3d6f96">Medium-2 preset</th>
+                  <th colspan="3" style="background-color: #3d6f96">Hard preset</th>
+                </tr>
+                <tr>
+                  <th style="background-color: #3d6f96">Accuracy<br />
+                    0 frames error</th>
+                  <th style="background-color: #3d6f96">Accuracy<br />
+                    3 frames error</th>
+                  <th style="background-color: #3d6f96">Accuracy<br />
+                    10 frames error</th>
+                  <th style="background-color: #3d6f96">Accuracy<br />
+                    0 frames error</th>
+                  <th style="background-color: #3d6f96">Accuracy<br />
+                    3 frames error</th>
+                  <th style="background-color: #3d6f96">Accuracy<br />
+                    10 frames error</th>
+                  <th style="background-color: #3d6f96">Accuracy<br />
+                    0 frames error</th>
+                  <th style="background-color: #3d6f96">Accuracy<br />
+                    3 frames error</th>
+                  <th style="background-color: #3d6f96">Accuracy<br />
+                    10 frames error</th>
+                  <th style="background-color: #3d6f96">Accuracy<br />
+                    0 frames error</th>
+                  <th style="background-color: #3d6f96">Accuracy<br />
+                    3 frames error</th>
+                  <th style="background-color: #3d6f96">Accuracy<br />
+                    10 frames error</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="item">
                   <td>TMK</td>
+                  <td>0.0</td>
+                  <td>0.066</td>
+                  <td>0.233</td>
+                  <td>0.0</td>
+                  <td>0.066</td>
+                  <td>0.233</td>
+                  <td>0.0</td>
+                  <td>0.066</td>
+                  <td>0.233</td>
                   <td>0.0</td>
                   <td>0.066</td>
                   <td>0.233</td>
@@ -198,10 +231,27 @@
                   <td>0.0</td>
                   <td>0.366</td>
                   <td>0.866</td>
+                  <td>0.0</td>
+                  <td>0.366</td>
+                  <td>0.866</td>
+                  <td>0.0</td>
+                  <td>0.366</td>
+                  <td>0.866</td>
+                  <td>0.0</td>
+                  <td>0.366</td>
+                  <td>0.866</td>
                 </tr>
                 <tr class="item">
-                  -    
                   <td>IVAN</td>
+                  <td>0.0</td>
+                  <td>0.166</td>
+                  <td>0.433</td>
+                  <td>0.0</td>
+                  <td>0.166</td>
+                  <td>0.433</td>
+                  <td>0.0</td>
+                  <td>0.166</td>
+                  <td>0.433</td>
                   <td>0.0</td>
                   <td>0.166</td>
                   <td>0.433</td>
@@ -211,21 +261,21 @@
                   <td>0.0</td>
                   <td>0.333</td>
                   <td>0.9</td>
+                  <td>0.0</td>
+                  <td>0.333</td>
+                  <td>0.9</td>
+                  <td>0.0</td>
+                  <td>0.333</td>
+                  <td>0.9</td>
+                  <td>0.0</td>
+                  <td>0.333</td>
+                  <td>0.9</td>
                 </tr>
               </tbody>
             </table>
-            <script>
-              $(document).ready(function () {
-                  $('#time-shift-table').DataTable({
-                      lengthChange: false,
-                      paging: false,
-                      searching: false
-                  });
-              });
-            </script>
           </div>
         </div>
-        <h3 id="plots">Plots</h3>
+        <p style="font-weight: bold">Charts</p>
         <p style="text-align: center">Highlight the plot region where you want to zoom in</p>
         <div id="div1-time-shift-light-wrapper" class="mobile-plots">
           <div id="div1-time-shift-light" class="highcharts-figure"></div>
@@ -245,6 +295,101 @@
         <div id="div1-time-shift-hard-error-wrapper" class="mobile-plots">
           <div id="div1-time-shift-hard-error" class="highcharts-figure"></div>
         </div>
+        <h3 id="global-time-distortions">Global time distortions</h3>
+        <p style="font-weight: bold">Leaderboard</p>
+        <div class="datatable-container">
+          <div class="datatable-center">
+            <table id="global-table" class="table-fixed" style="background-color: #d4d4d4">
+              <thead>
+                <tr style="font-size: large; background-color: #3d6f96">
+                  <th rowspan="2" style="background-color: #3d6f96">Name</th>
+                  <th colspan="3" style="background-color: #3d6f96">Light preset</th>
+                  <th colspan="3" style="background-color: #3d6f96">Medium-1 preset</th>
+                  <th colspan="3" style="background-color: #3d6f96">Medium-2 preset</th>
+                  <th colspan="3" style="background-color: #3d6f96">Hard preset</th>
+                </tr>
+                <tr>
+                  <th style="background-color: #3d6f96">F-1 score</th>
+                  <th style="background-color: #3d6f96">Precision</th>
+                  <th style="background-color: #3d6f96">Recall</th>
+                  <th style="background-color: #3d6f96">F-1 score</th>
+                  <th style="background-color: #3d6f96">Precision</th>
+                  <th style="background-color: #3d6f96">Recall</th>
+                  <th style="background-color: #3d6f96">F-1 score</th>
+                  <th style="background-color: #3d6f96">Precision</th>
+                  <th style="background-color: #3d6f96">Recall</th>
+                  <th style="background-color: #3d6f96">F-1 score</th>
+                  <th style="background-color: #3d6f96">Precision</th>
+                  <th style="background-color: #3d6f96">Recall</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="item">
+                  <td>TMK</td>
+                  <td>0.0</td>
+                  <td>0.066</td>
+                  <td>0.233</td>
+                  <td>0.0</td>
+                  <td>0.066</td>
+                  <td>0.233</td>
+                  <td>0.0</td>
+                  <td>0.066</td>
+                  <td>0.233</td>
+                  <td>0.0</td>
+                  <td>0.066</td>
+                  <td>0.233</td>
+                </tr>
+                <tr class="item">
+                  <td>VQMT</td>
+                  <td>0.0</td>
+                  <td>0.366</td>
+                  <td>0.866</td>
+                  <td>0.0</td>
+                  <td>0.366</td>
+                  <td>0.866</td>
+                  <td>0.0</td>
+                  <td>0.366</td>
+                  <td>0.866</td>
+                  <td>0.0</td>
+                  <td>0.366</td>
+                  <td>0.866</td>
+                </tr>
+                <tr class="item">
+                  <td>IVAN</td>
+                  <td>0.0</td>
+                  <td>0.166</td>
+                  <td>0.433</td>
+                  <td>0.0</td>
+                  <td>0.166</td>
+                  <td>0.433</td>
+                  <td>0.0</td>
+                  <td>0.166</td>
+                  <td>0.433</td>
+                  <td>0.0</td>
+                  <td>0.166</td>
+                  <td>0.433</td>
+                </tr>
+                <tr class="item">
+                  <td>VQMT3D</td>
+                  <td>0.0</td>
+                  <td>0.333</td>
+                  <td>0.9</td>
+                  <td>0.0</td>
+                  <td>0.333</td>
+                  <td>0.9</td>
+                  <td>0.0</td>
+                  <td>0.333</td>
+                  <td>0.9</td>
+                  <td>0.0</td>
+                  <td>0.333</td>
+                  <td>0.9</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p style="font-weight: bold">Charts</p>
+        <p style="text-align: center">Highlight the plot region where you want to zoom in</p>
         <div id="div2-f1-light-wrapper" class="mobile-plots">
           <div id="div2-f1-light" class="highcharts-figure"></div>
         </div>
@@ -254,6 +399,101 @@
         <div id="div2-f1-hard-wrapper" class="mobile-plots">
           <div id="div2-f1-hard" class="highcharts-figure"></div>
         </div>
+        <h3 id="mixed-time-distortions">Mixed time distortions</h3>
+        <p style="font-weight: bold">Leaderboard</p>
+        <div class="datatable-container">
+          <div class="datatable-center">
+            <table id="mixed-table" class="table-fixed" style="background-color: #d4d4d4">
+              <thead>
+                <tr style="font-size: large; background-color: #3d6f96">
+                  <th rowspan="2" style="background-color: #3d6f96">Name</th>
+                  <th colspan="3" style="background-color: #3d6f96">Light preset</th>
+                  <th colspan="3" style="background-color: #3d6f96">Medium-1 preset</th>
+                  <th colspan="3" style="background-color: #3d6f96">Medium-2 preset</th>
+                  <th colspan="3" style="background-color: #3d6f96">Hard preset</th>
+                </tr>
+                <tr>
+                  <th style="background-color: #3d6f96">F-1 score</th>
+                  <th style="background-color: #3d6f96">Precision</th>
+                  <th style="background-color: #3d6f96">Recall</th>
+                  <th style="background-color: #3d6f96">F-1 score</th>
+                  <th style="background-color: #3d6f96">Precision</th>
+                  <th style="background-color: #3d6f96">Recall</th>
+                  <th style="background-color: #3d6f96">F-1 score</th>
+                  <th style="background-color: #3d6f96">Precision</th>
+                  <th style="background-color: #3d6f96">Recall</th>
+                  <th style="background-color: #3d6f96">F-1 score</th>
+                  <th style="background-color: #3d6f96">Precision</th>
+                  <th style="background-color: #3d6f96">Recall</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="item">
+                  <td>TMK</td>
+                  <td>0.0</td>
+                  <td>0.066</td>
+                  <td>0.233</td>
+                  <td>0.0</td>
+                  <td>0.066</td>
+                  <td>0.233</td>
+                  <td>0.0</td>
+                  <td>0.066</td>
+                  <td>0.233</td>
+                  <td>0.0</td>
+                  <td>0.066</td>
+                  <td>0.233</td>
+                </tr>
+                <tr class="item">
+                  <td>VQMT</td>
+                  <td>0.0</td>
+                  <td>0.366</td>
+                  <td>0.866</td>
+                  <td>0.0</td>
+                  <td>0.366</td>
+                  <td>0.866</td>
+                  <td>0.0</td>
+                  <td>0.366</td>
+                  <td>0.866</td>
+                  <td>0.0</td>
+                  <td>0.366</td>
+                  <td>0.866</td>
+                </tr>
+                <tr class="item">
+                  <td>IVAN</td>
+                  <td>0.0</td>
+                  <td>0.166</td>
+                  <td>0.433</td>
+                  <td>0.0</td>
+                  <td>0.166</td>
+                  <td>0.433</td>
+                  <td>0.0</td>
+                  <td>0.166</td>
+                  <td>0.433</td>
+                  <td>0.0</td>
+                  <td>0.166</td>
+                  <td>0.433</td>
+                </tr>
+                <tr class="item">
+                  <td>VQMT3D</td>
+                  <td>0.0</td>
+                  <td>0.333</td>
+                  <td>0.9</td>
+                  <td>0.0</td>
+                  <td>0.333</td>
+                  <td>0.9</td>
+                  <td>0.0</td>
+                  <td>0.333</td>
+                  <td>0.9</td>
+                  <td>0.0</td>
+                  <td>0.333</td>
+                  <td>0.9</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p style="font-weight: bold">Charts</p>
+        <p style="text-align: center">Highlight the plot region where you want to zoom in</p>
         <div id="div3-f1-light-wrapper" class="mobile-plots">
           <div id="div3-f1-light" class="highcharts-figure"></div>
         </div>
@@ -267,7 +507,7 @@
         <h3 id="video-sequences-selection">Video sequences selection</h3>
         <div>
           <p>Content diversity in test sequences is necessary for running algorithms in near-realistic conditions. To provide this diversity the following steps have been undertaken.</p>
-          <p>The taxonomic video categories from Vimeo and Youtube were combined and 50 of the most popular videos with different lengths were downloaded from each category. This ensures unbiased video selection and sufficient cover in terms of semantics and context presented in the video. All the videos were viewed by a person for compliance with its category to ensure good result quality taken in the first step. Then, SI/Ti features and video bitrate were counted for each video and for each class videos with different SI/TI and bitrate were chosen to ensure diversity in terms of spatial and temporal information presented in the video and initial source video quality.</p>
+          <p>We identified two families of cases: processes during which temporary distortions could occur, i. e. montage, streaming, capturing from different rigidly-connected cameras (different framerate) etc. and content in test videos which is difficult to align, i. e. talking head, recurring events (such as football matches, formula-1 racing), camera on a tripod (small amount of movement) etc. Then, we downloaded ~7000 videos from vimeo from each taxonomic category to ensure unbiased video selection and sufficient cover in terms of semantics and context presented in the video. Finally, SI/Ti features were counted for each video and for each class we mapped videos to use cases mentioned above. We chose videos that sufficiently cover SI/TI space and all the identified use cases.</p>
         </div>
         <div id="videos-selection-wrapper" class="mobile-plots">
           <div id="videos-selection" class="highcharts-figure"></div>
@@ -278,10 +518,10 @@
         <div id="filtered-SITI-wrapper" class="mobile-plots">
           <div id="filtered-SITI" class="highcharts-figure"></div>
         </div>
-        <h3 id="distortions-selection">Distortions selection</h3>
+        <h3 id="-distortions-selection"><span id="distortions"></span> Distortions selection</h3>
         <div class="datatable-container">
           <div class="datatable-center">
-            <table id="distortions-table" class="datatable display" style="background-color: #d4d4d4">
+            <table id="distortions-table" class="static-table">
               <thead>
                 <tr style="font-size: large; background-color: #3d6f96">
                   <th style="background-color: #3d6f96">Distortion type</th>
@@ -290,76 +530,67 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="item">
-                  <td>Time distortions</td>
-                  <td>
-                    <ul>
-                      <li style="text-align:left">Drop frame</li>
-                      <li style="text-align:left">Duplicate/Freeze frame</li>
-                      <li style="text-align:left">Small time shift</li>
-                      <li style="text-align:left">Insert fragment</li>
-                      <li style="text-align:left">Drop fragment</li>
-                      <li style="text-align:left">Cut the entire video</li>
-                    </ul>
-                  </td>
-                  <td>
-                    <ul>
-                      <li style="text-align:left">Drop frame (with a probability of 40% first frame, with a probability of 40% last frame, with a probability of 20% random frame; with a probability of 1/3 1 or 2 frames, with a probability of 1/3 random number up to 10)</li>
-                      <li style="text-align:left">Duplication/Freeze frame (with a probability of 40% first frame, with a probability of 40% last frame, with a probability of 20% random frame;with probabilities of 1/3 1 or 2 frames, with a probability of 1/3 random number up to 10)</li>
-                      <li style="text-align:left">Cropping the beginning of the video (up to 11 frames) is applied in any case with a probability of 0.7, if it is True</li>
-                      <li style="text-align:left">Inserting a fragment (randomly selects a video from the dataset, randomly cuts it to ⅔ the original length, and inserts it in a random place of the distorted video)</li>
-                      <li style="text-align:left">Missing fragment (randomly select the length of the fragment &lt;⅓ of the entire video and the location from which it will disappear)</li>
-                      <li style="text-align:left">Crop (randomly from ⅔ to ⅓ of the original length) + shift up to 250 frames from the initial frame</li>
-                    </ul>
-                  </td>
+                <tr>
+                  <td rowspan="6">Time distortions</td>
+                  <td>Drop frames</td>
+                  <td rowspan="2">First/last/random &lt; fps; 1/2 frames or random up to 10</td>
                 </tr>
-                <tr class="item">
-                  <td>Geometric distortions</td>
-                  <td>
-                    <ul>
-                      <li style="text-align:left">Add logo</li>
-                      <li style="text-align:left">Add subtitles</li>
-                      <li style="text-align:left">Crop</li>
-                      <li style="text-align:left">Scaling</li>
-                    </ul>
-                  </td>
-                  <td>
-                    <ul>
-                      <li style="text-align:left">It is planned to have 15 sources of each type: Logo, News title</li>
-                      <li style="text-align:left">English language. Max 250 px from bottom or top</li>
-                      <li style="text-align:left">Crop to a ratio of 4:3 or 21:9. Then return to 16:9 by adding black bars</li>
-                      <li style="text-align:left">-</li>
-                    </ul>
-                  </td>
+                <tr>
+                  <td>Duplicate/Freeze frames</td>
                 </tr>
-                <tr class="item">
-                  <td>Color distortions</td>
-                  <td>
-                    <ul>
-                      <li style="text-align:left">Add noise</li>
-                      <li style="text-align:left">Add blur</li>
-                      <li style="text-align:left">Add random brightness&amp;contrast</li>
-                    </ul>
-                  </td>
-                  <td>
-                    <ul>
-                      <li style="text-align:left">Uniform or normal distribution</li>
-                      <li style="text-align:left">Gaussian blur with kernel 3x3</li>
-                      <li style="text-align:left">Random decrease to 33%</li>
-                    </ul>
-                  </td>
+                <tr>
+                  <td>Time shift</td>
+                  <td>Crop up to 11 frames from the start</td>
+                </tr>
+                <tr>
+                  <td>Insert fragment</td>
+                  <td>Insert fragment from another video</td>
+                </tr>
+                <tr>
+                  <td>Drop fragment</td>
+                  <td>Drop random fragment</td>
+                </tr>
+                <tr>
+                  <td>Cut the video</td>
+                  <td>Up to 3/4 of the entire video</td>
+                </tr>
+                <tr>
+                  <td rowspan="3">Color distortions</td>
+                  <td>Add noise</td>
+                  <td>Gaussian noise, sigma 3</td>
+                </tr>
+                <tr>
+                  <td>Add blur</td>
+                  <td>Gaussian blur, sigma 1.5</td>
+                </tr>
+                <tr>
+                  <td>Random brightness&amp;contrast</td>
+                  <td>Random brignthess decrease from -10% up to -25%,<br />
+                    contrast increase from 5% up to 30%</td>
+                </tr>
+                <tr>
+                  <td rowspan="5">Geometric distortions</td>
+                  <td>Add logo</td>
+                  <td>Logo or news title. Max 300px from bottom/top/ left/right</td>
+                </tr>
+                <tr>
+                  <td>Add subtitles</td>
+                  <td>English language. Max 250px from bottom or top</td>
+                </tr>
+                <tr>
+                  <td>Crop</td>
+                  <td>Crop 2/4/8 px from right and bottom</td>
+                </tr>
+                <tr>
+                  <td>Scale</td>
+                  <td>Scale up to 110%</td>
+                </tr>
+                <tr>
+                  <td>Add black bars</td>
+                  <td>Crop to a ratio of 4:3 or 21:9. Then return to 16:9 by adding black bars</td>
                 </tr>
               </tbody>
             </table>
-            <script>
-              $(document).ready(function () {
-                  $('#distortions-table').DataTable({
-                      lengthChange: false,
-                      paging: false,
-                      searching: false
-                  });
-              });
-            </script>
           </div>
         </div>
         <div id="div1-distortions-distribution-wrapper" class="mobile-plots">
@@ -371,58 +602,49 @@
         <div id="div3-distortions-distribution-wrapper" class="mobile-plots">
           <div id="div3-distortions-distribution" class="highcharts-figure"></div>
         </div>
-        <h3 id="divisions-and-presets">Divisions and presets</h3>
+        <h3 id="-benchmarks-and-presets"><span id="benchmarks"></span> Benchmarks and presets</h3>
         <div class="datatable-container">
           <div class="datatable-center">
-            <table id="divisions-and-presets-table" class="datatable display" style="background-color: #d4d4d4">
+            <table id="distortions-table" class="static-table">
               <thead>
                 <tr style="font-size: large; background-color: #3d6f96">
-                  <th style="background-color: #3d6f96">Division</th>
+                  <th style="background-color: #3d6f96">Benchmark</th>
                   <th style="background-color: #3d6f96">Used time distortions</th>
-                  <th style="background-color: #3d6f96">Metrics</th>
+                  <th style="background-color: #3d6f96">Used Metric</th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="item">
-                  <td>Local time distortions</td>
-                  <td>
-                    <ul>
-                      <li style="text-align:left">Drop frame</li>
-                      <li style="text-align:left">Duplicate frame</li>
-                      <li style="text-align:left">Freeze frame</li>
-                      <li style="text-align:left">Small time shift</li>
-                    </ul>
-                  </td>
-                  <td>Accuracy(%) of correctly localized time_shifts depending on maximum accepted error in frames/</td>
+                <tr>
+                  <td rowspan="4">Local time distortions</td>
+                  <td>Drop frames</td>
+                  <td rowspan="4">Accuracy(%) of correctly localized time_shifts depending on maximum accepted error in frames</td>
                 </tr>
-                <tr class="item">
-                  <td>Global time distortions</td>
-                  <td>
-                    <ul>
-                      <li style="text-align:left">Insert fragment</li>
-                      <li style="text-align:left">Drop fragment</li>
-                      <li style="text-align:left">Cut the entire video</li>
-                    </ul>
-                  </td>
-                  <td>F1-score</td>
+                <tr>
+                  <td>Duplicate frame</td>
                 </tr>
-                <tr class="item">
+                <tr>
+                  <td>Freeze frame</td>
+                </tr>
+                <tr>
+                  <td>Time shift</td>
+                </tr>
+                <tr>
+                  <td rowspan="3">Global time distortions</td>
+                  <td>Insert fragment</td>
+                  <td rowspan="4">F1-score</td>
+                </tr>
+                <tr>
+                  <td>Drop fragment</td>
+                </tr>
+                <tr>
+                  <td>Cut the entire video</td>
+                </tr>
+                <tr>
                   <td>Mixed time distortions</td>
-                  <td style="text-align:left">All time distortions</td>
-                  <td>F1-score</td>
+                  <td>All time distortions</td>
                 </tr>
               </tbody>
             </table>
-            <script>
-              $(document).ready(function () {
-                  $('#divisions-and-presets-table').DataTable({
-                      lengthChange: false,
-                      paging: false,
-                      searching: false,
-                      sorting: false,
-                  });
-              });
-            </script>
           </div>
         </div>
         <h3 id="evaluation-1">Evaluation</h3>
@@ -441,10 +663,7 @@
                     li {font-weight: normal;}
                   </style>
                   <ul style="font-weight: bold">
-                    <li>We expect the <b>output of your algorithm</b> to be in the following format: <br />
-                       json or csv file that contains three keys or columns ー cuts, dissolves and fades. <br />
-                      Each of these three must contain a list of frames with scene transitions according to the <a href="#methodology">Definition Section</a>  <br />
-                      <a href="http://titan.gml-team.ru/18a_ant/MSU%20SBD%20Benchmark%202020_files/examples/output.json" target="_blank" download="output.json">Output  example</a>
+                    <li>We expect a specific <b>output of your algorithm</b>. The description and some examples can be found in downloadable dataset folder.
                     </li>
                     <li>If your algorithm depends on <b>randomness</b> (KMeans, for example) we will launch it several times <br />
                       to get the average of the outcomes.
@@ -470,10 +689,11 @@
                 <b>2. Calculation</b>
               </td>
               <td bgcolor="#F4F6F6">
-                We calculate Accuracy, F1 score, Precision and Recall.
-                <p> Here are the formulas for these metrics:</p>
+                Depending on benchmark, we calculate Accuracy, F1 score, Precision and Recall.
+                <p> Here are the formulas for some of these metrics:</p>
                 <div>
                   <img src="/assets/img/benchmarks/sbd/f.png" />
+                  <img src="/assets/img/benchmarks/aligners/TPFN.png" />
                 </div>
               </td>
             </tr>
@@ -552,7 +772,7 @@
         </div>
         <h2 id="contacts"><span id="contacts"></span>Contacts</h2>
         <p>For questions and propositions, please contact us: <a href="mailto:aligners-benchmark@videoprocessing.ai">aligners-benchmark@videoprocessing.ai</a></p>
-        <script src="/assets/js/benchmarks/aligners/highcharts/charts_with_presets.js"></script>
+        <script src="/assets/js/benchmarks/aligners/highcharts/charts_and_tables.js"></script>
       </div>
       <div class="tiles-width meta">
         <div class="share">
