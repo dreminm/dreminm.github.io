@@ -104,7 +104,7 @@ $(function(){
             chart: {type: 'bar', renderTo: 'overall_pref_container'},
             title: {text: ''},
             xAxis: {
-                categories: ['Beta proposed','Saeid Dadkhan',  'Max Remain', 'FFmpeg', 'VQMT', 'PyScene', 'johmathe', 'aysebil'],//['aysebil', 'Beta proposed', 'FFmpeg', 'johmathe', 'Max Remain', 'PyScene', 'Saeid Dadkhan', 'VQMT'],
+                categories: ['Saeid Dadkhan',  'Max Remain', 'PyScene', 'VQMT', 'johmathe', 'aysebil', 'FFmpeg'],
                 title: {text: null}
             },
             yAxis: {min: 0.7,title: {text: 'F1 score'}},
@@ -124,7 +124,7 @@ $(function(){
             credits: {enabled: false},
             series: [{
                 name: 'F1 score',
-                data: [0.919, 0.894, 0.884, 0.881, 0.851, 0.849, 0.843, 0.810]
+                data: [0.797, 0.787, 0.777, 0.776, 0.772, 0.742, 0.736]
             }]
         }
 

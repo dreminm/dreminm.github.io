@@ -12,9 +12,7 @@ $(function () {
 		xAxis:{title:{text:'# of RAI video'},accessibility:{rangeDescription:'Range:1to11'}},
 		legend:{layout:'vertical',align:'right',verticalAlign:'middle'},
 		plotOptions:{series:{label:{connectorAllowed:false},pointStart:1}},
-		series:[{
-				name:'Beta proposed',
-				data:[0.6896,0.8295,0.8979,0.9911,0.9452,1,0.9903,0.9526,0.9719,0.9906]},
+		series:[
 			{
 				name:'VQMT',
 				data:[0.5666,0.6964,0.88,0.9911,0.9090,0.9902,0.9581,0.8934,0.7659,0.8]},
@@ -32,8 +30,11 @@ $(function () {
 				data:[0.6992342,0.759343,0.8593434,0.897435,0.95238462,0.913847534,0.90239,0.892324,0.93242,0.852942]}, 
 			{
 				name: 'FFmpeg',
-				data: [0.7492342, 0.7934563, 0.85345345, 0.9325734, 0.9137684, 0.943974, 0.969834, 0.89346583, 0.8638453, 0.893294]}
-				],
+				data: [0.7492342, 0.7934563, 0.85345345, 0.9325734, 0.9137684, 0.943974, 0.969834, 0.89346583, 0.8638453, 0.893294]},
+			{
+				name: 'johnmathe',
+				data: [0.71206742, 0.73077026, 0.84063617, 0.88179441, 0.88363621, 0.88184748, 0.87517, 0.86631, 0.8689, 0.815774]}
+			],
 		responsive: {rules:[{condition:{maxWidth:1200},chartOptions:{legend:{layout:'horizontal',align:'center',verticalAlign:'bottom'}}}]}});
 
     });

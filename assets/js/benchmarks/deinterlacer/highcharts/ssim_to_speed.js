@@ -68,72 +68,68 @@ $(function () {
                 }
             },
             series: [		{
-			name: 'YADIF',
-			data: [[0.965, 48.96]]
-		},
-		{
-			name: 'Bob-Weave Deinterlacer',
-			data: [[0.976, 46.45]]
-		},
-		{
-			name: 'Weston 3-Field Deinterlacer',
-			data: [[0.969, 36.75]]
-		},
-		{
-			name: 'Kernel Deinterlacer',
-			data: [[0.96, 37.85]]
-		},
-		{
 			name: 'NNEDI',
-			data: [[0.978, 1.91]]
-		},
-		{
-			name: 'Real-Time Deep Deinterlacer',
-			data: [[0.976, 0.27]]
-		},
-		{
-			name: 'Bob',
-			data: [[0.975, 52.83]]
-		},
-		{
-			name: 'MSU Deinterlacer',
-			data: [[0.983, 1.3]]
-		},
-		{
-			name: 'Motion and Area Pixel Deinterlacer',
-			data: [[0.95, 2.15]]
-		},
-		{
-			name: 'Muksun Deinterlacer',
-			data: [[0.949, 1.95]]
+			data: [[0.954, 1.91]]
 		},
 		{
 			name: 'PAL Interpolation',
-			data: [[0.913, 2.85]]
-		},
-		{
-			name: 'ASVZZZ Deinterlacer',
-			data: [[0.902, 1.9]]
-		},
-		{
-			name: 'Adobe Premiere Pro Built-In',
-			data: [[0.958, 43.82]]
-		},
-		{
-			name: 'Motion Compensation Deinterlacer',
-			data: [[0.804, 1.45]]
+			data: [[0.901, 2.85]]
 		},
 		{
 			name: 'VapourSynth EEDI3',
-			data: [[0.977, 51.9]]
+			data: [[0.954, 51.9]]
+		},
+		{
+			name: 'Bob',
+			data: [[0.951, 52.83]]
+		},
+		{
+			name: 'Motion and Area Pixel Deinterlacer',
+			data: [[0.932, 2.15]]
+		},
+		{
+			name: 'YADIF',
+			data: [[0.945, 48.96]]
+		},
+		{
+			name: 'MSU Deinterlacer',
+			data: [[0.963, 1.3]]
+		},
+		{
+			name: 'ASVZZZ Deinterlacer',
+			data: [[0.928, 1.9]]
 		},
 		{
 			name: 'VapourSynth TDeintMod',
-			data: [[0.977, 50.29]]
+			data: [[0.951, 50.29]]
 		},
 		{
 			name: 'Kernel Deinterlacer (optimal parameters)',
-			data: [[0.97, 37.91]]
+			data: [[0.947, 37.91]]
+		},
+		{
+			name: 'Weston 3-Field Deinterlacer',
+			data: [[0.947, 36.75]]
+		},
+		{
+			name: 'Bob-Weave Deinterlacer',
+			data: [[0.953, 46.45]]
+		},
+		{
+			name: 'Motion Compensation Deinterlacer',
+			data: [[0.83, 1.45]]
+		},
+		{
+			name: 'Real-Time Deep Deinterlacer',
+			data: [[0.953, 0.27]]
+		},
+		{
+			name: 'Muksun Deinterlacer',
+			data: [[0.928, 1.95]]
+		},
+		{
+			name: 'Kernel Deinterlacer',
+			data: [[0.939, 37.85]]
 		},
 		]
         });

@@ -82,8 +82,8 @@ $(document).ready(function () {
         series: []
     };
     function redrawCharts(filters){
-        $.getJSON('../assets/json/benchmarks/aligners/Div1_shift.json', function (data) {
-            $.getJSON('../assets/json/benchmarks/aligners/dist_to_files_div1.json', function (dist_to_files) {
+        $.getJSON('../assets/json/benchmarks/aligners/Local_color_shift.json', function (data) {
+            $.getJSON('../assets/json/benchmarks/aligners/dist_to_pairs_Local_color.json', function (dist_to_files) {
                 line_options.series = [];
                 line_options.chart.renderTo = 'div1-time-shift-filters';
                 line_options.title.text = 'Div1 time_shift';

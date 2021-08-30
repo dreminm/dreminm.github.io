@@ -175,154 +175,99 @@ $(document).ready(function () {
         series: []
     };
 
-    function drawCharts(){
-        $.getJSON('../assets/json/benchmarks/aligners/dist_to_files_div1.json', function (dist_to_files) {
-            const filters = [["fps_drop", "fps_freeze", "shift", "add_noise"], ["fps_drop", "fps_freeze", "shift", "add_logo", "add_subtitles", "add_blur", "add_gamma", "rbr"], ["fps_drop", "fps_freeze", "shift", "add_logo", "add_subtitles", "add_crop", "add_graphics", "add_datamoshing", "add_watermark", "add_noise", "add_blur", "add_gamma", "rbr"]];
-            const presets = ['Light', 'Medium', 'Hard'];
-            $.getJSON('../assets/json/benchmarks/aligners/Div1_shift.json', function (data) {
-                const divs = ['div1-time-shift-light', 'div1-time-shift-medium', 'div1-time-shift-hard'];
-                for (let iter = 0; iter < filters.length; ++iter) {
-                    var line1 = $.extend( true, {}, line_options);
-                    var line2 = $.extend( true, {}, line_options);
-                    line1.chart.renderTo = divs[iter];
-                    line1.title.text = presets[iter].concat(' ', 'preset');
-                    line1.subtitle.text = 'Accuracy';
-                    line1.xAxis.title.text = 'Maximum accepted error [frames]';
-                    line1.yAxis.title.text = 'Accuracy';
+    function drawCharts() {
+        $.getJSON('../assets/json/benchmarks/aligners/Results.json', function (data) {
+            var total = 0;
+            var new_flag = true;
+            let presets = ['Light', 'Medium-1', 'Medium-2', 'Hard'];
+            var table_data = [];
+            var names = [];
+            let keys = ['Local_only_time', 'Local_geom', 'Local_color', 'Local_color_geom']
+            let divs = ['div1-time-shift-light', 'div1-time-shift-medium-1', 'div1-time-shift-medium-2', 'div1-time-shift-hard'];
+            for (let iter = 0; iter < presets.length; ++iter) {
+                var line1 = $.extend(true, {}, line_options);
+                var line2 = $.extend(true, {}, line_options);
+                line1.chart.renderTo = divs[iter];
+                line1.title.text = presets[iter].concat(' ', 'preset');
+                line1.subtitle.text = 'Accuracy';
+                line1.xAxis.title.text = 'Maximum accepted error [frames]';
+                line1.yAxis.title.text = 'Accuracy';
 
-                    line2.title.text = presets[iter].concat(' ', 'preset');
-                    line2.subtitle.text = 'Error on test pairs';
-                    line2.chart.renderTo = divs[iter].concat('-', 'error');
-                    line2.xAxis.title.text = 'Test pair';
-                    line2.yAxis.title.text = 'Shift error [frames]';
-
-                    for (const [key, value] of Object.entries(data)) {
-                        var total = 0;
-                        var accuracy = [];
-                        var errors = [];
-                        var new_pair = true;
-                        for (const [key2, value2] of Object.entries(value)) {
-                            const files = key2.split('|');
-                            var allowed = true;
-                            var error_flag = true;
-                            if (filters[iter] != null) {
-                                for (let i = 0; i < files.length; ++i) {
-                                    for (let j = 0; j < dist_to_files[files[i]].length; ++j) {
-                                        if (!filters[iter].includes(dist_to_files[files[i]][j])) {
-                                            allowed = false;
-                                        }
-                                    }
-                                }
-                            }
-                            if (allowed) {
-                                total += 1;
-                                if (new_pair) {
-                                    accuracy = value2["data"];
-                                    new_pair = false;
-                                } else {
-                                    for (let i = 0; i < accuracy.length; ++i) {
-                                        if (value2["data"][i] > 0 && error_flag) {
-                                            errors.push(i);
-                                            error_flag = false;
-                                        }
-                                        accuracy[i] += value2["data"][i];
-                                    }
-                                }
-                            }
-                        }
-                        for (let i = 0; i < accuracy.length; i++) {
-                            accuracy[i] /= total;
-                        }
-                        line1.series.push({name: key, data: accuracy});
-                        line2.series.push({name: key, data: errors});
+                line2.title.text = presets[iter].concat(' ', 'preset');
+                line2.subtitle.text = 'Error on test pairs';
+                line2.chart.renderTo = divs[iter].concat('-', 'error');
+                line2.xAxis.title.text = 'Test pair';
+                line2.yAxis.title.text = 'Shift error [frames]';
+                for (const [key, value] of Object.entries(data[keys[iter]])) {
+                    if (new_flag) {
+                        total++;
+                        names.push(key);
                     }
-                    new Highcharts.Chart(line1);
-                    new Highcharts.Chart(line2);
+                    line1.series.push({name: key, data: value["accuracy"]});
+                    line2.series.push({name: key, data: value["errors"]});
+                    table_data.push(value["accuracy"][0].toFixed(4), value["accuracy"][3].toFixed(4), value["accuracy"][10].toFixed(4));
                 }
+                new_flag = false;
+                new Highcharts.Chart(line1);
+                new Highcharts.Chart(line2);
+            }
+            var new_table_data = [];
+            for (let i = 0; i < total; ++i) {
+                var buffer = [];
+                for (let j = 0; j < total; ++j) {
+                    buffer.push(table_data[j * table_data.length / total + i*3], table_data[j * table_data.length / total + i*3 + 1], table_data[j * table_data.length / total + i*3 +2]);
+                }
+                new_table_data.push([names[i], ...buffer]);
+            }
+            $('#local-table').DataTable({
+                paging: false,
+                searching: false,
+                info: false,
+                data: new_table_data,
+            });
+            keys = ['Global_only_time', 'Global_geom', 'Global_color', 'Global_color_geom']
+            divs = ['div2-f1-light', 'div2-f1-medium-1', 'div2-f1-medium-2', 'div2-f1-hard'];
+            table_data = [];
+            for (let iter = 0; iter < presets.length; ++iter) {
+                var line = $.extend(true, {}, line_options);
+                line.title.text = 'Global time distortions';
+                //line2.subtitle.text = presets[iter].concat(' ', 'preset');
+                line.chart.renderTo = divs[iter];
+                line.xAxis.title.text = 'Test pair';
+                line.yAxis.title.text = 'F1-score';
+                var points = [];
+                line.series.push({name: "VideoIndexer", data: data[keys[iter]]["points"]});
+                table_data.push(data[keys[iter]]["f1"].toFixed(4), data[keys[iter]]["precision"].toFixed(4), data[keys[iter]]["recall"].toFixed(4));
+                new Highcharts.Chart(line);
+            }
+            $('#global-table').DataTable({
+                paging: false,
+                searching: false,
+                info: false,
+                data: [['VideoIndexer', ...table_data]],
+            });
+            keys = ['Mixed_only_time', 'Mixed_geom', 'Mixed_color', 'Mixed_color_geom']
+            divs = ['div3-f1-light', 'div3-f1-medium-1', 'div3-f1-medium-2', 'div3-f1-hard'];
+            table_data = [];
+            for (let iter = 0; iter < presets.length; ++iter) {
+                var line = $.extend(true, {}, line_options);
+                line.title.text = 'Mixed time distortions';
+                //line2.subtitle.text = presets[iter].concat(' ', 'preset');
+                line.chart.renderTo = divs[iter];
+                line.xAxis.title.text = 'Test pair';
+                line.yAxis.title.text = 'F1-score';
+                var points = [];
+                line.series.push({name: "VideoIndexer", data: data[keys[iter]]["points"]});
+                table_data.push(data[keys[iter]]["f1"].toFixed(4), data[keys[iter]]["precision"].toFixed(4), data[keys[iter]]["recall"].toFixed(4));
+                new Highcharts.Chart(line);
+            }
+            $('#mixed-table').DataTable({
+                paging: false,
+                searching: false,
+                info: false,
+                data: [['VideoIndexer', ...table_data]],
             });
         });
-
-
-        $.getJSON('../assets/json/benchmarks/aligners/dist_to_files_div2.json', function (dist_to_files) {
-            //const filters = [["fps_drop", "fps_freeze", "shift", "add_noise"], ["fps_drop", "fps_freeze", "shift", "add_logo", "add_subtitles", "add_blur", "add_gamma", "rbr"], ["fps_drop", "fps_freeze", "shift", "add_logo", "add_subtitles", "add_crop", "add_graphics", "add_datamoshing", "add_watermark", "add_noise", "add_blur", "add_gamma", "rbr"]];
-            const filters=[["fps_drop", "fps_freeze", "shift", "add_noise"]];
-            const presets = ['Light', 'Medium', 'Hard'];
-            $.getJSON('../assets/json/benchmarks/aligners/Div2_f1.json', function (data) {
-                const divs = ['div2-f1-light', 'div2-f1-medium', 'div2-f1-hard'];
-                for (let iter = 0; iter < filters.length; ++iter) {
-                    var line = $.extend( true, {}, line_options);
-
-                    line.title.text = 'Global time distortions';
-                    //line2.subtitle.text = presets[iter].concat(' ', 'preset');
-                    line.chart.renderTo = divs[iter];
-                    line.xAxis.title.text = 'Test pair';
-                    line.yAxis.title.text = 'F1-score';
-
-                    var points = [];
-                    for (const [key, value] of Object.entries(data)) {
-                        const files = key.split('|');
-                        var allowed = true;
-                        if (filters[iter] != null) {
-                            for (let i = 0; i < files.length; ++i) {
-                                for (let j = 0; j < dist_to_files[files[i]].length; ++j) {
-                                    if (!filters[iter].includes(dist_to_files[files[i]][j])) {
-                                        allowed = true;
-                                    }
-                                }
-                            }
-                        }
-                        console.log(allowed);
-                        if (allowed) {
-                            var f1 = parseFloat(value.tp) / (parseFloat(value.tp) + 0.5 * (parseFloat(value.fp) + parseFloat(value.fn)));
-                            points.push(f1);
-                        }
-                    }
-                    line.series.push({name: "IVAN", data: points});
-                    new Highcharts.Chart(line);
-                }
-            });
-        });
-
-
-        $.getJSON('../assets/json/benchmarks/aligners/dist_to_files_div3.json', function (dist_to_files) {
-            //const filters = [["fps_drop", "fps_freeze", "shift", "add_noise"], ["fps_drop", "fps_freeze", "shift", "add_logo", "add_subtitles", "add_blur", "add_gamma", "rbr"], ["fps_drop", "fps_freeze", "shift", "add_logo", "add_subtitles", "add_crop", "add_graphics", "add_datamoshing", "add_watermark", "add_noise", "add_blur", "add_gamma", "rbr"]];
-            const filters=[["fps_drop", "fps_freeze", "shift", "add_noise"]];
-            const presets = ['Light', 'Medium', 'Hard'];
-            $.getJSON('../assets/json/benchmarks/aligners/Div3_f1.json', function (data) {
-                const divs = ['div3-f1-light', 'div3-f1-medium', 'div3-f1-hard'];
-                for (let iter = 0; iter < filters.length; ++iter) {
-                    var line = $.extend( true, {}, line_options);
-
-                    line.title.text = 'Mixed time distortions';
-                    //line2.subtitle.text = presets[iter].concat(' ', 'preset');
-                    line.chart.renderTo = divs[iter];
-                    line.xAxis.title.text = 'Test pair';
-                    line.yAxis.title.text = 'F1-score';
-                    var points = [];
-                    for (const [key, value] of Object.entries(data)) {
-                        const files = key.split('|');
-                        var allowed = true;
-                        if (filters[iter] != null) {
-                            for (let i = 0; i < files.length; ++i) {
-                                for (let j = 0; j < dist_to_files[files[i]].length; ++j) {
-                                    if (!filters[iter].includes(dist_to_files[files[i]][j])) {
-                                        allowed = true;
-                                    }
-                                }
-                            }
-                        }
-                        console.log(allowed);
-                        if (allowed) {
-                            var f1 = parseFloat(value.tp) / (parseFloat(value.tp) + 0.5 * (parseFloat(value.fp) + parseFloat(value.fn)));
-                            points.push(f1);
-                        }
-                    }
-                    line.series.push({name: "IVAN", data: points.sort(function(a, b){return b - a})});
-                    new Highcharts.Chart(line);
-                }
-            });
-        });
-
 
         $.getJSON('../assets/json/benchmarks/aligners/categories_stat.json', function (data) {
             bar_options.series = [];
@@ -336,67 +281,43 @@ $(document).ready(function () {
             for (const [key, value] of Object.entries(data)) {
                 cats.push(key);
                 bars.push(value);
+                bar_options.xAxis.categories = cats;
+                bar_options.series.push({name: "Amount", data: bars});
+                var chart = new Highcharts.Chart(bar_options);
             }
-            bar_options.xAxis.categories = cats;
-            bar_options.series.push({name: "Amount", data: bars});
-            var chart = new Highcharts.Chart(bar_options);
         });
 
-        $.getJSON('../assets/json/benchmarks/aligners/div1_dists_distr.json', function (data) {
-            bar_options.series = [];
-            bar_options.xAxis.categories = [];
-            bar_options.subtitle.text = 'Distortions distribution';
-            bar_options.title.text = 'Local time distortions';
-            bar_options.chart.renderTo = 'div1-distortions-distribution';
-            bar_options.yAxis.title.text = 'Amount of videos with this distortion';
-            var bars = [];
-            var cats = [];
-            for (const [key, value] of Object.entries(data)) {
-                cats.push(key);
-                bars.push(value);
+        $.getJSON('../assets/json/benchmarks/aligners/dists_res.json', function (data) {
+            let presets = ['Light', 'Medium-1', 'Medium-2', 'Hard'];
+            let divs = ['Local', 'Global', 'Mixed'];
+            let renders = [['local-light-distortions-distribution', 'local-medium-1-distortions-distribution', 'local-medium-2-distortions-distribution', 'local-hard-distortions-distribution'],
+                ['global-light-distortions-distribution', 'global-medium-1-distortions-distribution', 'global-medium-2-distortions-distribution', 'global-hard-distortions-distribution'],
+                ['mixed-light-distortions-distribution', 'mixed-medium-1-distortions-distribution', 'mixed-medium-2-distortions-distribution', 'mixed-hard-distortions-distribution']];
+            let keys = [['Local_only_time', 'Local_geom', 'Local_color', 'Local_color_geom'],
+                ['Global_only_time', 'Global_geom', 'Global_color', 'Global_color_geom'],
+                ['Mixed_only_time', 'Mixed_geom', 'Mixed_color', 'Mixed_color_geom']];
+            for (let i = 0; i<divs.length; ++i) {
+                for (let j = 0; j < presets.length; ++j) {
+                    bar_options.series = [];
+                    bar_options.xAxis.categories = [];
+                    bar_options.subtitle.text = presets[j]+' distortions distribution';
+                    bar_options.title.text = divs[i]+' time distortions';
+                    bar_options.chart.renderTo = renders[i][j];
+                    bar_options.yAxis.title.text = 'Amount of videos with this distortion';
+                    var bars = [];
+                    var cats = [];
+                    for (const [key, value] of Object.entries(data[keys[i][j]])) {
+                        if (value > 0) {
+                            cats.push(key);
+                            bars.push(value);
+                        }
+                    }
+                    bar_options.xAxis.categories = cats;
+                    bar_options.series.push({name: 'Amount', data: bars});
+                    var chart = new Highcharts.Chart(bar_options);
+                }
             }
-            bar_options.xAxis.categories = cats;
-            bar_options.series.push({name: 'Amount', data: bars});
-            var chart = new Highcharts.Chart(bar_options);
         });
-
-        $.getJSON('../assets/json/benchmarks/aligners/div2_dists_distr.json', function (data) {
-            bar_options.series = [];
-            bar_options.xAxis.categories = [];
-            bar_options.subtitle.text = 'Distortions distribution';
-            bar_options.title.text = 'Global time distortions';
-            bar_options.chart.renderTo = 'div2-distortions-distribution';
-            bar_options.yAxis.title.text = 'Amount of videos with this distortion';
-            var bars = [];
-            var cats = [];
-            for (const [key, value] of Object.entries(data)) {
-                cats.push(key);
-                bars.push(value);
-            }
-            bar_options.xAxis.categories = cats;
-            bar_options.series.push({name: 'Amount', data: bars});
-            var chart = new Highcharts.Chart(bar_options);
-        });
-
-        $.getJSON('../assets/json/benchmarks/aligners/div3_dists_distr.json', function (data) {
-            bar_options.series = [];
-            bar_options.xAxis.categories = [];
-            bar_options.subtitle.text = 'Distortions distribution';
-            bar_options.title.text = 'Mixed time distortions';
-            bar_options.chart.renderTo = 'div3-distortions-distribution';
-            bar_options.yAxis.title.text = 'Amount of videos with this distortion';
-            var bars = [];
-            var cats = [];
-            for (const [key, value] of Object.entries(data)) {
-                cats.push(key);
-                bars.push(value);
-            }
-            bar_options.xAxis.categories = cats;
-            bar_options.series.push({name: 'Amount', data: bars});
-            var chart = new Highcharts.Chart(bar_options);
-        });
-
-
 
         $.getJSON('../assets/json/benchmarks/aligners/siti_site.json', function (data) {
             scatter_options.series = [];
@@ -413,7 +334,7 @@ $(document).ready(function () {
         });
 
         $.getJSON('../assets/json/benchmarks/aligners/filtered_siti_site.json', function (data) {
-            var scatter = $.extend( true, {}, scatter_options);
+            var scatter = $.extend(true, {}, scatter_options);
             scatter.chart.renderTo = 'filtered-SITI';
             scatter.title.text = 'Filtered SI/TI';
             scatter.legend.enabled = false;
@@ -426,20 +347,4 @@ $(document).ready(function () {
         });
     }
     drawCharts();
-
-    $('#local-table').DataTable({
-        paging: false,
-        searching: false,
-        info: false,
-    });
-    $('#global-table').DataTable({
-        paging: false,
-        searching: false,
-        info: false,
-    });
-    $('#mixed-table').DataTable({
-        paging: false,
-        searching: false,
-        info: false,
-    });
 });
