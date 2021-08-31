@@ -230,8 +230,8 @@ $(document).ready(function () {
             table_data = [];
             for (let iter = 0; iter < presets.length; ++iter) {
                 var line = $.extend(true, {}, line_options);
-                line.title.text = 'Global time distortions';
-                //line2.subtitle.text = presets[iter].concat(' ', 'preset');
+                line.title.text = presets[iter].concat(' ', 'preset');
+                line.subtitle.text = 'F1 score';
                 line.chart.renderTo = divs[iter];
                 line.xAxis.title.text = 'Test pair';
                 line.yAxis.title.text = 'F1-score';
@@ -251,11 +251,11 @@ $(document).ready(function () {
             table_data = [];
             for (let iter = 0; iter < presets.length; ++iter) {
                 var line = $.extend(true, {}, line_options);
-                line.title.text = 'Mixed time distortions';
-                //line2.subtitle.text = presets[iter].concat(' ', 'preset');
+                line.title.text = presets[iter].concat(' ', 'preset');
+                line.subtitle.text = 'F1 score';
                 line.chart.renderTo = divs[iter];
                 line.xAxis.title.text = 'Test pair';
-                line.yAxis.title.text = 'F1-score';
+                line.yAxis.title.text = 'F1 score';
                 var points = [];
                 line.series.push({name: "VideoIndexer", data: data[keys[iter]]["points"]});
                 table_data.push(data[keys[iter]]["f1"].toFixed(4), data[keys[iter]]["precision"].toFixed(4), data[keys[iter]]["recall"].toFixed(4));
