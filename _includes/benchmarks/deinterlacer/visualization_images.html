@@ -19,7 +19,7 @@
     .column {
         box-sizing: border-box;
         float: left;
-        width: 24%;
+        width: 32%;
         padding: 5px;
     }
 
@@ -33,139 +33,7 @@
 </style>
 
 
-<div class="comparison_selector_div mobile-visualization">
-    <script>
-        var bad_count = 5;
-        var deint_num_to_zoom = {
-            "nnedi0": [250, 1125],
-            "nnedi1": [675, 800],
-            "nnedi2": [725, 200],
-            "nnedi3": [175, 900],
-            "nnedi4": [825, 1350],
-
-            "palinter0": [675, 800],
-            "palinter1": [725, 225],
-            "palinter2": [250, 1125],
-            "palinter3": [850, 925],
-            "palinter4": [825, 1350],
-
-            "eedi30": [250, 1125],
-            "eedi31": [675, 800],
-            "eedi32": [725, 225],
-            "eedi33": [175, 900],
-            "eedi34": [825, 1350],
-
-            "bob0": [525, 1700],
-            "bob1": [600, 1700],
-            "bob2": [425, 1575],
-            "bob3": [375, 525],
-            "bob4": [775, 1550],
-
-            "elementalLiveLLI0": [250, 1125],
-            "elementalLiveLLI1": [725, 225],
-            "elementalLiveLLI2": [675, 800],
-            "elementalLiveLLI3": [175, 900],
-            "elementalLiveLLI4": [825, 1350],
-
-            "deintmap0": [275, 1150],
-            "deintmap1": [250, 1125],
-            "deintmap2": [725, 225],
-            "deintmap3": [675, 800],
-            "deintmap4": [725, 825],
-
-            "yadif0": [650, 650],
-            "yadif1": [725, 200],
-            "yadif2": [500, 525],
-            "yadif3": [900, 875],
-            "yadif4": [300, 1650],
-
-            "elementalLiveMAB0": [425, 1325],
-            "elementalLiveMAB1": [450, 1550],
-            "elementalLiveMAB2": [400, 525],
-            "elementalLiveMAB3": [375, 1700],
-            "elementalLiveMAB4": [725, 500],
-
-            "msudeint0": [300, 500],
-            "msudeint1": [250, 1125],
-            "msudeint2": [175, 900],
-            "msudeint3": [725, 225],
-            "msudeint4": [625, 750],
-
-            "asvzzzdeint0": [425, 1325],
-            "asvzzzdeint1": [400, 525],
-            "asvzzzdeint2": [450, 1550],
-            "asvzzzdeint3": [375, 1700],
-            "asvzzzdeint4": [725, 500],
-
-            "tdeint0": [250, 1125],
-            "tdeint1": [675, 800],
-            "tdeint2": [725, 200],
-            "tdeint3": [175, 900],
-            "tdeint4": [825, 1350],
-
-            "kerndeint_tuned0": [725, 225],
-            "kerndeint_tuned1": [675, 800],
-            "kerndeint_tuned2": [250, 1125],
-            "kerndeint_tuned3": [375, 525],
-            "kerndeint_tuned4": [200, 875],
-
-            "w3fdif0": [675, 800],
-            "w3fdif1": [250, 1125],
-            "w3fdif2": [750, 200],
-            "w3fdif3": [900, 850],
-            "w3fdif4": [175, 900],
-
-            "bwdif0": [725, 200],
-            "bwdif1": [675, 800],
-            "bwdif2": [250, 1125],
-            "bwdif3": [175, 900],
-            "bwdif4": [825, 1350],
-
-            "adobePremiereDefault0": [650, 650],
-            "adobePremiereDefault1": [250, 1125],
-            "adobePremiereDefault2": [725, 200],
-            "adobePremiereDefault3": [150, 850],
-            "adobePremiereDefault4": [825, 1350],
-
-            "mcdeint0": [500, 1325],
-            "mcdeint1": [400, 525],
-            "mcdeint2": [450, 1550],
-            "mcdeint3": [375, 1700],
-            "mcdeint4": [725, 500],
-
-            "deepdeint0": [250, 1125],
-            "deepdeint1": [675, 800],
-            "deepdeint2": [725, 225],
-            "deepdeint3": [175, 900],
-            "deepdeint4": [825, 1350],
-
-            "muksun0": [625, 675],
-            "muksun1": [725, 200],
-            "muksun2": [250, 1125],
-            "muksun3": [725, 425],
-            "muksun4": [975, 75],
-
-            "vmix_blend0": [975, 75],
-            "vmix_blend1": [725, 225],
-            "vmix_blend2": [625, 675],
-            "vmix_blend3": [475, 575],
-            "vmix_blend4": [850, 925],
-
-            "elementalLiveMAI0": [675, 800],
-            "elementalLiveMAI1": [250, 1125],
-            "elementalLiveMAI2": [725, 200],
-            "elementalLiveMAI3": [200, 875],
-            "elementalLiveMAI4": [825, 1350],
-
-            "kerndeint0": [550, 0],
-            "kerndeint1": [725, 225],
-            "kerndeint2": [675, 800],
-            "kerndeint3": [250, 1125],
-            "kerndeint4": [200, 975],
-
-
-        };
-    </script>
+<div class="comparison_selector_div">
     <script>
 
         function imageZoom(imgIDs, resultIDs, vqmtIDs, zoomx, zoomy) {
@@ -340,249 +208,166 @@
         }
     </script>
 
-    <p style="font-size: medium; text-align: center; width: 80%; margin-left: 10%"> Drag a red rectangle in the area
-        which you want to crop, by
-        default it is in the
-        area with the worst PSNR</p>
+    <p style="font-size: medium; text-align: center; width: 80%; margin-left: 10%"> Drag a white rectangle in the area
+        which you want to crop </p>
 
 
-    <p>The area to compare on: <label for="comp_num_selector"></label><select id="comp_num_selector" name="values">
-        <option>1st worst test area of NNEDI</option>
-        <option>2st worst test area of NNEDI</option>
-        <option>3st worst test area of NNEDI</option>
-        <option>4st worst test area of NNEDI</option>
-        <option>5st worst test area of NNEDI</option>
-        <option>1st worst test area of PAL Interpolation</option>
-        <option>2st worst test area of PAL Interpolation</option>
-        <option>3st worst test area of PAL Interpolation</option>
-        <option>4st worst test area of PAL Interpolation</option>
-        <option>5st worst test area of PAL Interpolation</option>
-        <option>1st worst test area of Vapoursynth EEDI3</option>
-        <option>2st worst test area of Vapoursynth EEDI3</option>
-        <option>3st worst test area of Vapoursynth EEDI3</option>
-        <option>4st worst test area of Vapoursynth EEDI3</option>
-        <option>5st worst test area of Vapoursynth EEDI3</option>
-        <option>1st worst test area of Bob</option>
-        <option>2st worst test area of Bob</option>
-        <option>3st worst test area of Bob</option>
-        <option>4st worst test area of Bob</option>
-        <option>5st worst test area of Bob</option>
-        <option>1st worst test area of Elemental Live Low Latency Interpolation</option>
-        <option>2st worst test area of Elemental Live Low Latency Interpolation</option>
-        <option>3st worst test area of Elemental Live Low Latency Interpolation</option>
-        <option>4st worst test area of Elemental Live Low Latency Interpolation</option>
-        <option>5st worst test area of Elemental Live Low Latency Interpolation</option>
-        <option>1st worst test area of Motion and Area Pixel Deinterlacer</option>
-        <option>2st worst test area of Motion and Area Pixel Deinterlacer</option>
-        <option>3st worst test area of Motion and Area Pixel Deinterlacer</option>
-        <option>4st worst test area of Motion and Area Pixel Deinterlacer</option>
-        <option>5st worst test area of Motion and Area Pixel Deinterlacer</option>
-        <option>1st worst test area of YADIF</option>
-        <option>2st worst test area of YADIF</option>
-        <option>3st worst test area of YADIF</option>
-        <option>4st worst test area of YADIF</option>
-        <option>5st worst test area of YADIF</option>
-        <option>1st worst test area of Elemental Live Motion Adaptive Blend</option>
-        <option>2st worst test area of Elemental Live Motion Adaptive Blend</option>
-        <option>3st worst test area of Elemental Live Motion Adaptive Blend</option>
-        <option>4st worst test area of Elemental Live Motion Adaptive Blend</option>
-        <option>5st worst test area of Elemental Live Motion Adaptive Blend</option>
-        <option>1st worst test area of MSU Deinterlacer</option>
-        <option>2st worst test area of MSU Deinterlacer</option>
-        <option>3st worst test area of MSU Deinterlacer</option>
-        <option>4st worst test area of MSU Deinterlacer</option>
-        <option>5st worst test area of MSU Deinterlacer</option>
-        <option>1st worst test area of ASVZZZ Deinterlacer</option>
-        <option>2st worst test area of ASVZZZ Deinterlacer</option>
-        <option>3st worst test area of ASVZZZ Deinterlacer</option>
-        <option>4st worst test area of ASVZZZ Deinterlacer</option>
-        <option>5st worst test area of ASVZZZ Deinterlacer</option>
-        <option>1st worst test area of Vapoursynth TDeintMod</option>
-        <option>2st worst test area of Vapoursynth TDeintMod</option>
-        <option>3st worst test area of Vapoursynth TDeintMod</option>
-        <option>4st worst test area of Vapoursynth TDeintMod</option>
-        <option>5st worst test area of Vapoursynth TDeintMod</option>
-        <option>1st worst test area of Kernel Deinterlacer (optimal parameters)</option>
-        <option>2st worst test area of Kernel Deinterlacer (optimal parameters)</option>
-        <option>3st worst test area of Kernel Deinterlacer (optimal parameters)</option>
-        <option>4st worst test area of Kernel Deinterlacer (optimal parameters)</option>
-        <option>5st worst test area of Kernel Deinterlacer (optimal parameters)</option>
-        <option>1st worst test area of Weston 3-Field Deinterlacer</option>
-        <option>2st worst test area of Weston 3-Field Deinterlacer</option>
-        <option>3st worst test area of Weston 3-Field Deinterlacer</option>
-        <option>4st worst test area of Weston 3-Field Deinterlacer</option>
-        <option>5st worst test area of Weston 3-Field Deinterlacer</option>
-        <option>1st worst test area of Bob-Weave Deinterlacer</option>
-        <option>2st worst test area of Bob-Weave Deinterlacer</option>
-        <option>3st worst test area of Bob-Weave Deinterlacer</option>
-        <option>4st worst test area of Bob-Weave Deinterlacer</option>
-        <option>5st worst test area of Bob-Weave Deinterlacer</option>
-        <option>1st worst test area of Adobe Premiere Pro Built-In</option>
-        <option>2st worst test area of Adobe Premiere Pro Built-In</option>
-        <option>3st worst test area of Adobe Premiere Pro Built-In</option>
-        <option>4st worst test area of Adobe Premiere Pro Built-In</option>
-        <option>5st worst test area of Adobe Premiere Pro Built-In</option>
-        <option>1st worst test area of Motion Compensation Deinterlacer</option>
-        <option>2st worst test area of Motion Compensation Deinterlacer</option>
-        <option>3st worst test area of Motion Compensation Deinterlacer</option>
-        <option>4st worst test area of Motion Compensation Deinterlacer</option>
-        <option>5st worst test area of Motion Compensation Deinterlacer</option>
-        <option>1st worst test area of Real-Time Deep Deinterlacer</option>
-        <option>2st worst test area of Real-Time Deep Deinterlacer</option>
-        <option>3st worst test area of Real-Time Deep Deinterlacer</option>
-        <option>4st worst test area of Real-Time Deep Deinterlacer</option>
-        <option>5st worst test area of Real-Time Deep Deinterlacer</option>
-        <option>1st worst test area of Muksun Deinterlacer</option>
-        <option>2st worst test area of Muksun Deinterlacer</option>
-        <option>3st worst test area of Muksun Deinterlacer</option>
-        <option>4st worst test area of Muksun Deinterlacer</option>
-        <option>5st worst test area of Muksun Deinterlacer</option>
-        <option>1st worst test area of Studio Coast Pty vMix</option>
-        <option>2st worst test area of Studio Coast Pty vMix</option>
-        <option>3st worst test area of Studio Coast Pty vMix</option>
-        <option>4st worst test area of Studio Coast Pty vMix</option>
-        <option>5st worst test area of Studio Coast Pty vMix</option>
-        <option>1st worst test area of Elemental Live Motion Adaptive Interpolation</option>
-        <option>2st worst test area of Elemental Live Motion Adaptive Interpolation</option>
-        <option>3st worst test area of Elemental Live Motion Adaptive Interpolation</option>
-        <option>4st worst test area of Elemental Live Motion Adaptive Interpolation</option>
-        <option>5st worst test area of Elemental Live Motion Adaptive Interpolation</option>
-        <option>1st worst test area of Kernel Deinterlacer</option>
-        <option>2st worst test area of Kernel Deinterlacer</option>
-        <option>3st worst test area of Kernel Deinterlacer</option>
-        <option>4st worst test area of Kernel Deinterlacer</option>
-        <option>5st worst test area of Kernel Deinterlacer</option>
-    </select> Deinterlacer 1: <label for="comp_deint1_selector"></label><select id="comp_deint1_selector"
-                                                                                name="values">
-        <option>NNEDI</option>
-        <option selected="selected">MSU Deinterlacer</option>
-        <option>VS TDeintMod</option>
-    </select> Deinterlacer 2: <label for="comp_deint2_selector"></label><select id="comp_deint2_selector"
-                                                                                name="values">
-        <option>NNEDI</option>
-        <option>MSU Deinterlacer</option>
-        <option selected="selected">VS TDeintMod</option>
+    <p>The frame to compare on: <label for="comp_num_selector"></label><select id="comp_num_selector" name="values">
+        <option>Tokyo market</option>
+        <option>Dancing crowd</option>
+        <option>Deity</option>
+        <option>Forest bicycle</option>
+        <option>Girls</option>
+        <option>Logo letters</option>
+        <option>House</option>
+        <option>Soulfruit promo</option>
+        <option>Mountain view</option>
+        <option>Ocean panorama</option>
+
+
     </select></p>
+
+    <p>Deinterlacer 1: <label for="comp_deint1_selector"></label><select id="comp_deint1_selector"
+                                                                         name="values">
+        <option>ASVZZZ Deinterlacer</option>
+        <option>Bob</option>
+        <option>Bob-Weave Deinterlacer</option>
+        <option>Real-Time Deep Deinterlacer</option>
+        <option>Motion and Area Pixel Deinterlacer</option>
+        <option>Vapoursynth EEDI3</option>
+        <option>Kernel Deinterlacer</option>
+        <option>Kernel Deinterlacer (optimal parameters)</option>
+        <option>Motion Compensation Deinterlacer</option>
+        <option selected="selected">MSU Deinterlacer</option>
+        <option>Muksun Deinterlacer</option>
+        <option>NNEDI</option>
+        <option>PAL Interpolation</option>
+        <option>Vapoursynth TDeintMod</option>
+        <option>Weston 3-Field Deinterlacer</option>
+        <option>YADIF</option>
+
+
+    </select></p>
+
+    <p>Deinterlacer 2: <label for="comp_deint2_selector"></label><select id="comp_deint2_selector"
+                                                                         name="values">
+        <option>ASVZZZ Deinterlacer</option>
+        <option>Bob</option>
+        <option>Bob-Weave Deinterlacer</option>
+        <option>Real-Time Deep Deinterlacer</option>
+        <option>Motion and Area Pixel Deinterlacer</option>
+        <option>Vapoursynth EEDI3</option>
+        <option>Kernel Deinterlacer</option>
+        <option>Kernel Deinterlacer (optimal parameters)</option>
+        <option>Motion Compensation Deinterlacer</option>
+        <option>MSU Deinterlacer</option>
+        <option>Muksun Deinterlacer</option>
+        <option selected="selected">NNEDI</option>
+        <option>PAL Interpolation</option>
+        <option>Vapoursynth TDeintMod</option>
+        <option>Weston 3-Field Deinterlacer</option>
+        <option>YADIF</option>
+    </select>
+
+    </p>
 
 
     <div class="row">
         <div class="column">
             <h3 style="text-align: center">GT</h3>
             <div class="img-zoom-container">
-                <img id="imagegt" style="width: 100%; height: 8vw"
-                     src="https://titan.gml-team.ru/24a_zel/deinterlacer_benchmark/imgs/nnedi_worst0/gt.png">
+                <img id="imagegt" style="width: 100%; height: 12vw"
+                     src="https://storage.videoprocessing.ai/benchmarks/deinterlacer/imgs_new/0/gt.png">
                 <div id="resultgt" class="img-zoom-result" style="width: 100%; padding-top: 100%"></div>
-                <div id="fake_vqmt" style="width: 100%;">
+                <div id="fake_vqmt" class="img-zoom-result" style="width: 100%;">
                     <p style="font-size: large; text-align: center">In this row you can see VQMT PSNR Visualization</p>
                 </div>
             </div>
         </div>
         <div class="column">
-            <h3 id="comp_label_bad" style="text-align: center">NNEDI</h3>
-            <div class="img-zoom-container">
-                <img id="imagebad" style="width: 100%; height: 8vw"
-                     src="https://titan.gml-team.ru/24a_zel/deinterlacer_benchmark/imgs/nnedi_worst0/nnedi.png">
-                <div id="resultbad" class="img-zoom-result" style="width: 100%; padding-top: 100%"></div>
-                <div id="vqmtbad" class="img-zoom-result" style="width: 100%; padding-top: 100%"></div>
-            </div>
-        </div>
-        <div class="column">
             <h3 id="comp_label1" style="text-align: center">MSU Deinterlacer</h3>
             <div class="img-zoom-container">
-                <img id="image1" style="width: 100%; height: 8vw"
-                     src="https://titan.gml-team.ru/24a_zel/deinterlacer_benchmark/imgs/nnedi_worst0/msudeint.png">
+                <img id="image1" style="width: 100%; height: 12vw"
+                     src="https://storage.videoprocessing.ai/benchmarks/deinterlacer/imgs_new/0/msudeint.png">
                 <div id="result1" class="img-zoom-result" style="width: 100%; padding-top: 100%"></div>
                 <div id="vqmt1" class="img-zoom-result" style="width: 100%; padding-top: 100%"></div>
             </div>
         </div>
         <div class="column">
-            <h3 id="comp_label2" style="text-align: center">VS TDeintMod</h3>
+            <h3 id="comp_label2" style="text-align: center">NNEDI</h3>
             <div class="img-zoom-container">
-                <img id="image2" style="width: 100%; height: 8vw"
-                     src="https://titan.gml-team.ru/24a_zel/deinterlacer_benchmark/imgs/nnedi_worst0/tdeint.png">
+                <img id="image2" style="width: 100%; height: 12vw"
+                     src="https://storage.videoprocessing.ai/benchmarks/deinterlacer/imgs_new/0/nnedi.png">
                 <div id="result2" class="img-zoom-result" style="width: 100%; padding-top: 100%"></div>
                 <div id="vqmt2" class="img-zoom-result" style="width: 100%; padding-top: 100%"></div>
             </div>
         </div>
         <script>
-            imageZoom(["imagegt", "imagebad", "image1", "image2"],
-                ["resultgt", "resultbad", "result1", "result2"], ["fake_vqmt", "vqmtbad", "vqmt1", "vqmt2"], 250, 1125);
+            imageZoom(["imagegt", "image1", "image2"],
+                ["resultgt", "result1", "result2"], ["fake_vqmt", "vqmt1", "vqmt2"], 500, 500);
             onChangeHelper();
 
             function onChangeHelper() {
-                let bignumToName = ['nnedi', 'palinter', 'eedi3', 'bob', 'elementalLiveLLI', 'deintmap', 'yadif',
-                    'elementalLiveMAB', 'msudeint', 'asvzzzdeint', 'tdeint', 'kerndeint_tuned', 'w3fdif', 'bwdif',
-                    'adobePremiereDefault', 'mcdeint', 'deepdeint', 'muksun', 'vmix_blend', 'elementalLiveMAI',
-                    'kerndeint'];
-                let numToName = ['nnedi', 'msudeint', 'tdeint'];
-                let bignumToOfficialName = ['NNEDI', 'PAL Interpolation', 'Vapoursynth EEDI3', 'Bob',
-                    'EL LLI', 'MAP Deinterlacer', 'YADIF', 'EL MAB',
-                    'MSU Deinterlacer', 'ASVZZZ Deinterlacer', 'VS TDeintMod', 'Kernel (optimal params)',
-                    'W3-F Deinterlacer', 'BW Deinterlacer', 'Adobe Built-In', 'MC Deinterlacer',
-                    'Deep Deinterlacer', 'Muksun', 'Studio Coast Pty vMix', 'EL MAI', 'Kernel Deinterlacer'];
-
-                let numToOfficialName = ["NNEDI", "MSU Deinterlacer", "VS TDeintMod"];
+                let video_numbers = [0, 8, 11, 12, 14, 15, 16, 23, 26, 27];
+                let bignumToName = ['asvzzzdeint', 'bob', 'bwdif', 'deepdeint', 'deintmap', 'eedi3',
+                    'kerndeint', 'kerndeint_tuned', 'mcdeint', 'msudeint', 'muksun', 'nnedi',
+                    'palinter', 'tdeint', 'w3fdif', 'yadif'];
+                let bignumToOfficialName = ['ASVZZZ Deinterlacer', 'Bob', 'Bob-Weave Deinterlacer',
+                    'Real-Time Deep Deinterlacer', 'Motion and Area Pixel Deinterlacer',
+                    'Vapoursynth EEDI3', 'Kernel Deinterlacer',
+                    'Kernel Deinterlacer (optimal parameters)', 'Motion Compensation Deinterlacer',
+                    'MSU Deinterlacer', 'Muksun Deinterlacer', 'NNEDI', 'PAL Interpolation',
+                    'Vapoursynth TDeintMod', 'Weston 3-Field Deinterlacer', 'YADIF'];
 
                 let numselect = document.getElementById("comp_num_selector");
-                let selected_deint = bignumToName[Math.floor(numselect.selectedIndex / bad_count)];
-                let selected_bad = numselect.selectedIndex % 5;
+                let selected_video = video_numbers[numselect.selectedIndex];
 
                 let deint1select = document.getElementById("comp_deint1_selector");
                 let deint2select = document.getElementById("comp_deint2_selector");
 
                 let pic_gt = document.getElementById("imagegt");
-                let pic_interlaced = document.getElementById("imagebad");
                 let pic1 = document.getElementById("image1");
                 let pic2 = document.getElementById("image2");
 
-
                 let fake_vqmt = document.getElementById("fake_vqmt");
-                let vqmtbad = document.getElementById("vqmtbad");
                 let vqmt1 = document.getElementById("vqmt1");
                 let vqmt2 = document.getElementById("vqmt2");
 
-                let name1 = numToName[deint1select.selectedIndex];
-                let name2 = numToName[deint2select.selectedIndex];
+                let name1 = bignumToName[deint1select.selectedIndex];
+                let name2 = bignumToName[deint2select.selectedIndex];
 
-                let img_prefix = "https://titan.gml-team.ru/24a_zel/deinterlacer_benchmark/";
-                let src_gt = img_prefix + "imgs/" + selected_deint + "_worst" + selected_bad.toString() + "/gt.png";
-                let src_interlaced = img_prefix + "imgs/" + selected_deint + "_worst" + selected_bad.toString() + "/" + selected_deint + ".png";
-                let src1 = img_prefix + "imgs/" + selected_deint + "_worst" + selected_bad.toString() + "/" + name1 + ".png";
-                let src2 = img_prefix + "imgs/" + selected_deint + "_worst" + selected_bad.toString() + "/" + name2 + ".png";
+                let img_prefix = "https://storage.videoprocessing.ai/benchmarks/deinterlacer/";
 
-                let vqmtbad_src = img_prefix + "vqmts/" + selected_deint + "_worst" + selected_bad.toString() + "/" + selected_deint + ".png";
-                let vqmt1_src = img_prefix + "vqmts/" + selected_deint + "_worst" + selected_bad.toString() + "/" + name1 + ".png";
-                let vqmt2_src = img_prefix + "vqmts/" + selected_deint + "_worst" + selected_bad.toString() + "/" + name2 + ".png";
+                let src_gt = img_prefix + "imgs_new/" + selected_video + "/gt.png";
+                let src1 = img_prefix + "imgs_new/" + selected_video + "/" + name1 + ".png";
+                let src2 = img_prefix + "imgs_new/" + selected_video + "/" + name2 + ".png";
 
-                let labelbad = document.getElementById("comp_label_bad");
+                let vqmt1_src = img_prefix + "vqmts_new/" + selected_video + "/" + name1 + ".png";
+                let vqmt2_src = img_prefix + "vqmts_new/" + selected_video + "/" + name2 + ".png";
+
                 let comp_label1 = document.getElementById("comp_label1");
                 let comp_label2 = document.getElementById("comp_label2");
 
-                labelbad.innerText = bignumToOfficialName[Math.floor(numselect.selectedIndex / bad_count)];
 
-
-                //fake_vqmt.style.backgroundImage = "url('" + 'https://titan.gml-team.ru/24a_zel/deinterlacer_benchmark/black.png' + "')";
-                vqmtbad.style.backgroundImage = "url('" + vqmtbad_src + "')";
+                //fake_vqmt.style.backgroundImage = "url('" + 'black.png' + "')";
                 vqmt1.style.backgroundImage = "url('" + vqmt1_src + "')";
                 vqmt2.style.backgroundImage = "url('" + vqmt2_src + "')";
 
 
-                let label1 = numToOfficialName[deint1select.selectedIndex];
-                let label2 = numToOfficialName[deint2select.selectedIndex];
+                let label1 = bignumToOfficialName[deint1select.selectedIndex];
+                let label2 = bignumToOfficialName[deint2select.selectedIndex];
                 comp_label1.innerText = label1;
                 comp_label2.innerText = label2;
 
                 pic_gt.src = src_gt;
-                pic_interlaced.src = src_interlaced;
                 pic1.src = src1;
                 pic2.src = src2;
 
-                let zooms = deint_num_to_zoom[selected_deint + selected_bad.toString()];
-                let zoomx = zooms[0];
-                let zoomy = zooms[1];
+                let zoomx = 500;
+                let zoomy = 500;
 
-                imageZoom(["imagegt", "imagebad", "image1", "image2"],
-                    ["resultgt", "resultbad", "result1", "result2"], ["vqmtbad", "vqmt1", "vqmt2"], zoomx, zoomy);
+                imageZoom(["imagegt", "image1", "image2"],
+                    ["resultgt", "result1", "result2"], ["vqmt1", "vqmt2"], zoomx, zoomy);
             }
 
             document.getElementById("comp_num_selector").onchange = onChangeHelper;

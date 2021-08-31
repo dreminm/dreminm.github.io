@@ -13,7 +13,7 @@
 <div id="frame_plots" style="width: 80%; margin-left: 10%">
   <p>Dataset: <label for="frame_plots_selector"></label><select id="frame_plots_selector" name="values">
       <option>RAI</option>
-      <option>CC</option>
+      <option>MSU SBD Dataset</option>
   </select></p>
 
 
@@ -35,10 +35,10 @@
           this_div.appendChild(new_plot);
           let sc = document.createElement("script");
 
-          if (this.selectedIndex === 0) {
+          if (this.selectedIndex == 0) {
               sc.src = "/assets/js/benchmarks/sbd/highcharts/rai_f1.js";
           } else {
-              sc.src = "/assets/js/benchmarks/sbd/highcharts/cc_f1.js";
+              sc.src = "/assets/js/benchmarks/sbd/highcharts/osd_f1.js";
           }
           new_plot.appendChild(sc);
       }

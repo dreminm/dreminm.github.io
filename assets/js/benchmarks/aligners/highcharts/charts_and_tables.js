@@ -69,7 +69,7 @@ $(document).ready(function () {
         series: [],
     };
 
-    var bar_options = {
+    var column_options = {
         chart: {
             type: 'column',
             renderTo: 'container',
@@ -175,7 +175,7 @@ $(document).ready(function () {
         series: []
     };
 
-    function drawCharts() {
+    function drawChartsandTables() {
         $.getJSON('../assets/json/benchmarks/aligners/Results.json', function (data) {
             var total = 0;
             var new_flag = true;
@@ -270,21 +270,20 @@ $(document).ready(function () {
         });
 
         $.getJSON('../assets/json/benchmarks/aligners/categories_stat.json', function (data) {
-            bar_options.series = [];
-            bar_options.xAxis.categories = [];
-            bar_options.title.text = 'Categories';
-            bar_options.subtitle.text = '';
-            bar_options.chart.renderTo = 'videos-selection';
-            bar_options.yAxis.title.text = 'Number of videos';
+            var column = $.extend(true, {}, column_options);
+            column.title.text = 'Categories';
+            column.subtitle.text = '';
+            column.chart.renderTo = 'videos-selection';
+            column.yAxis.title.text = 'Number of videos';
             var bars = [];
             var cats = [];
             for (const [key, value] of Object.entries(data)) {
                 cats.push(key);
                 bars.push(value);
-                bar_options.xAxis.categories = cats;
-                bar_options.series.push({name: "Amount", data: bars});
-                var chart = new Highcharts.Chart(bar_options);
             }
+            column.xAxis.categories = cats;
+            column.series.push({name: "Amount", data: bars});
+            var chart = new Highcharts.Chart(column);
         });
 
         $.getJSON('../assets/json/benchmarks/aligners/dists_res.json', function (data) {
@@ -298,12 +297,11 @@ $(document).ready(function () {
                 ['Mixed_only_time', 'Mixed_geom', 'Mixed_color', 'Mixed_color_geom']];
             for (let i = 0; i<divs.length; ++i) {
                 for (let j = 0; j < presets.length; ++j) {
-                    bar_options.series = [];
-                    bar_options.xAxis.categories = [];
-                    bar_options.subtitle.text = presets[j]+' distortions distribution';
-                    bar_options.title.text = divs[i]+' time distortions';
-                    bar_options.chart.renderTo = renders[i][j];
-                    bar_options.yAxis.title.text = 'Amount of videos with this distortion';
+                    var column = $.extend(true, {}, column_options);
+                    column.subtitle.text = presets[j]+' distortions distribution';
+                    column.title.text = divs[i]+' time distortions';
+                    column.chart.renderTo = renders[i][j];
+                    column.yAxis.title.text = 'Amount of videos with this distortion';
                     var bars = [];
                     var cats = [];
                     for (const [key, value] of Object.entries(data[keys[i][j]])) {
@@ -312,25 +310,25 @@ $(document).ready(function () {
                             bars.push(value);
                         }
                     }
-                    bar_options.xAxis.categories = cats;
-                    bar_options.series.push({name: 'Amount', data: bars});
-                    var chart = new Highcharts.Chart(bar_options);
+                    column.xAxis.categories = cats;
+                    column.series.push({name: 'Amount', data: bars});
+                    var chart = new Highcharts.Chart(column);
                 }
             }
         });
 
         $.getJSON('../assets/json/benchmarks/aligners/siti_site.json', function (data) {
-            scatter_options.series = [];
-            scatter_options.chart.renderTo = 'SITI';
-            scatter_options.title.text = 'SI/TI';
+            var scatter = $.extend(true, {}, scatter_options);
+            scatter.chart.renderTo = 'SITI';
+            scatter.title.text = 'SI/TI';
             for (const [key, value] of Object.entries(data)) {
                 var new_data = [];
                 for (let i = 0; i < value.length; ++i) {
                     new_data.push({x: value[i][1], y: value[i][2], name: value[i][0]})
                 }
-                scatter_options.series.push({name: key, data: new_data});
+                scatter.series.push({name: key, data: new_data});
             }
-            var chart = new Highcharts.Chart(scatter_options);
+            var chart = new Highcharts.Chart(scatter);
         });
 
         $.getJSON('../assets/json/benchmarks/aligners/filtered_siti_site.json', function (data) {
@@ -346,5 +344,5 @@ $(document).ready(function () {
             var chart = new Highcharts.Chart(scatter);
         });
     }
-    drawCharts();
+    drawChartsandTables();
 });
