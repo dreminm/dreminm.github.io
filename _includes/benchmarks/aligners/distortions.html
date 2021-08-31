@@ -71,73 +71,75 @@
         </table>
     </div>
 </div>
-<div class="tab">
-    <button class="local-tablinks" onclick="openChart(event, 'local-light-distortions-distribution', 'local-plots')" style="background-color: #2a7ae2">Light</button>
-    <button class="local-tablinks" onclick="openChart(event, 'local-medium-1-distortions-distribution', 'local-plots')">Medium-1</button>
-    <button class="local-tablinks" onclick="openChart(event, 'local-medium-2-distortions-distribution', 'local-plots')">Medium-2</button>
-    <button class="local-tablinks" onclick="openChart(event, 'local-hard-distortions-distribution', 'local-plots')">Hard</button>
+<div class="tabs">
+    <button class="local-tablinks" onclick="openChart(event, 'local-light-distortions-distribution-wrapper', 'local-plots')" style="background-color: #3d6f96; color: white">Light</button>
+    <button class="local-tablinks" onclick="openChart(event, 'local-medium-1-distortions-distribution-wrapper', 'local-plots')">Medium-1</button>
+    <button class="local-tablinks" onclick="openChart(event, 'local-medium-2-distortions-distribution-wrapper', 'local-plots')">Medium-2</button>
+    <button class="local-tablinks" onclick="openChart(event, 'local-hard-distortions-distribution-wrapper', 'local-plots')">Hard</button>
 </div>
 <div>
-    <div id="local-light-distortions-distribution-wrapper" class="mobile-plots" style="position: absolute">
-        <div id="local-light-distortions-distribution" class="highcharts-figure local-plots"></div>
+    <div id="local-light-distortions-distribution-wrapper" class="mobile-plots local-plots" style="position: absolute; z-index: 1">
+        <div id="local-light-distortions-distribution" class="highcharts-figure"></div>
     </div>
-    <div id="local-medium-1-distortions-distribution-wrapper" class="mobile-plots" style="position: absolute">
-        <div id="local-medium-1-distortions-distribution" class="highcharts-figure  local-plots" style="opacity: 0"></div>
+    <div id="local-medium-1-distortions-distribution-wrapper" class="mobile-plots local-plots" style="position: absolute">
+        <div id="local-medium-1-distortions-distribution" class="highcharts-figure"></div>
     </div>
-    <div id="local-medium-2-distortions-distribution-wrapper" class="mobile-plots" style="position: absolute">
-        <div id="local-medium-2-distortions-distribution" class="highcharts-figure  local-plots" style="opacity: 0"></div>
+    <div id="local-medium-2-distortions-distribution-wrapper" class="mobile-plots local-plots" style="position: absolute">
+        <div id="local-medium-2-distortions-distribution" class="highcharts-figure"></div>
     </div>
-    <div id="local-hard-distortions-distribution-wrapper" class="mobile-plots">
-        <div id="local-hard-distortions-distribution" class="highcharts-figure  local-plots" style="opacity: 0"></div>
+    <div id="local-hard-distortions-distribution-wrapper" class="mobile-plots local-plots">
+        <div id="local-hard-distortions-distribution" class="highcharts-figure"></div>
     </div>
 </div>
-<div class="tab">
-    <button class="global-tablinks" onclick="openChart(event, 'global-light-distortions-distribution', 'global-plots')" style="background-color: #2a7ae2">Light</button>
-    <button class="global-tablinks" onclick="openChart(event, 'global-medium-1-distortions-distribution', 'global-plots')">Medium-1</button>
-    <button class="global-tablinks" onclick="openChart(event, 'global-medium-2-distortions-distribution', 'global-plots')">Medium-2</button>
-    <button class="global-tablinks" onclick="openChart(event, 'global-hard-distortions-distribution', 'global-plots')">Hard</button>
+<div class="tabs">
+    <button class="global-tablinks" onclick="openChart(event, 'global-light-distortions-distribution-wrapper', 'global-plots')" style="background-color: #3d6f96; color: white">Light</button>
+    <button class="global-tablinks" onclick="openChart(event, 'global-medium-1-distortions-distribution-wrapper', 'global-plots')">Medium-1</button>
+    <button class="global-tablinks" onclick="openChart(event, 'global-medium-2-distortions-distribution-wrapper', 'global-plots')">Medium-2</button>
+    <button class="global-tablinks" onclick="openChart(event, 'global-hard-distortions-distribution-wrapper', 'global-plots')">Hard</button>
 </div>
-<div id="global-light-distortions-distribution-wrapper" class="mobile-plots" style="position: absolute">
-    <div id="global-light-distortions-distribution" class="highcharts-figure global-plots"></div>
+<div id="global-light-distortions-distribution-wrapper" class="mobile-plots global-plots" style="position: absolute; z-index: 1">
+    <div id="global-light-distortions-distribution" class="highcharts-figure"></div>
 </div>
-<div id="global-medium-1-distortions-distribution-wrapper" class="mobile-plots" style="position: absolute">
-    <div id="global-medium-1-distortions-distribution" class="highcharts-figure global-plots" style="opacity: 0"></div>
+<div id="global-medium-1-distortions-distribution-wrapper" class="mobile-plots global-plots" style="position: absolute">
+    <div id="global-medium-1-distortions-distribution" class="highcharts-figure"></div>
 </div>
-<div id="global-medium-2-distortions-distribution-wrapper" class="mobile-plots" style="position: absolute">
-    <div id="global-medium-2-distortions-distribution" class="highcharts-figure global-plots" style="opacity: 0"></div>
+<div id="global-medium-2-distortions-distribution-wrapper" class="mobile-plots global-plots" style="position: absolute">
+    <div id="global-medium-2-distortions-distribution" class="highcharts-figure"></div>
 </div>
-<div id="global-hard-distortions-distribution-wrapper" class="mobile-plots">
-    <div id="global-hard-distortions-distribution" class="highcharts-figure global-plots" style="opacity: 0"></div>
+<div id="global-hard-distortions-distribution-wrapper" class="mobile-plots global-plots">
+    <div id="global-hard-distortions-distribution" class="highcharts-figure"></div>
 </div>
-<div class="tab">
-    <button class="mixed-tablinks" onclick="openChart(event, 'mixed-light-distortions-distribution', 'mixed-plots')" style="background-color: #2a7ae2">Light</button>
-    <button class="mixed-tablinks" onclick="openChart(event, 'mixed-medium-1-distortions-distribution', 'mixed-plots')">Medium-1</button>
-    <button class="mixed-tablinks" onclick="openChart(event, 'mixed-medium-2-distortions-distribution', 'mixed-plots')">Medium-2</button>
-    <button class="mixed-tablinks" onclick="openChart(event, 'mixed-hard-distortions-distribution', 'mixed-plots')">Hard</button>
+<div class="tabs">
+    <button class="mixed-tablinks" onclick="openChart(event, 'mixed-light-distortions-distribution-wrapper', 'mixed-plots')" style="background-color: #3d6f96; color: white">Light</button>
+    <button class="mixed-tablinks" onclick="openChart(event, 'mixed-medium-1-distortions-distribution-wrapper', 'mixed-plots')">Medium-1</button>
+    <button class="mixed-tablinks" onclick="openChart(event, 'mixed-medium-2-distortions-distribution-wrapper', 'mixed-plots')">Medium-2</button>
+    <button class="mixed-tablinks" onclick="openChart(event, 'mixed-hard-distortions-distribution-wrapper', 'mixed-plots')">Hard</button>
 </div>
-<div id="mixed-light-distortions-distribution-wrapper" class="mobile-plots" style="position: absolute">
-    <div id="mixed-light-distortions-distribution" class="highcharts-figure mixed-plots"></div>
+<div id="mixed-light-distortions-distribution-wrapper" class="mobile-plots mixed-plots" style="position: absolute; z-index: 1">
+    <div id="mixed-light-distortions-distribution" class="highcharts-figure"></div>
 </div>
-<div id="mixed-medium-1-distortions-distribution-wrapper" class="mobile-plots" style="position: absolute">
-    <div id="mixed-medium-1-distortions-distribution" class="highcharts-figure mixed-plots" style="opacity: 0"></div>
+<div id="mixed-medium-1-distortions-distribution-wrapper" class="mobile-plots mixed-plots" style="position: absolute">
+    <div id="mixed-medium-1-distortions-distribution" class="highcharts-figure"></div>
 </div>
-<div id="mixed-medium-2-distortions-distribution-wrapper" class="mobile-plots" style="position: absolute">
-    <div id="mixed-medium-2-distortions-distribution" class="highcharts-figure mixed-plots" style="opacity: 0"></div>
+<div id="mixed-medium-2-distortions-distribution-wrapper" class="mobile-plots mixed-plots" style="position: absolute">
+    <div id="mixed-medium-2-distortions-distribution" class="highcharts-figure"></div>
 </div>
-<div id="mixed-hard-distortions-distribution-wrapper" class="mobile-plots">
-    <div id="mixed-hard-distortions-distribution" class="highcharts-figure mixed-plots" style="opacity: 0"></div>
+<div id="mixed-hard-distortions-distribution-wrapper" class="mobile-plots mixed-plots">
+    <div id="mixed-hard-distortions-distribution" class="highcharts-figure"></div>
 </div>
 <script>
     function openChart(evt, id, charts_class) {
         tablinks = document.getElementsByClassName(evt.currentTarget.className);
         for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].style.backgroundColor = "#ffffff";
+            tablinks[i].style.backgroundColor = "#f0f0f0";
+            tablinks[i].style.color = "black";
         }
         charts = document.getElementsByClassName(charts_class);
         for (i = 0; i < charts.length; i++) {
-            charts[i].style.opacity = "0";
+            charts[i].style.zIndex = "0";
         }
-        document.getElementById(id).style.opacity = "100";
-        evt.currentTarget.style.backgroundColor = "#2a7ae2";
+        document.getElementById(id).style.zIndex = "1";
+        evt.currentTarget.style.backgroundColor = "#3d6f96";
+        evt.currentTarget.style.color = "white";
     }
 </script>
