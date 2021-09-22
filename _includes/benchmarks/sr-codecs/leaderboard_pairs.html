@@ -1,0 +1,155 @@
+<p>
+    The table below shows a comparison of all pairs of Super-Resolution algorithms and codecs.
+    The table also includes <a href="/benchmarks/super-resolution-for-video-compression-methodology.html#only_compressed">"only compressed"</a> methods (e.g. "only x264").
+    You can choose a <b>metric</b> for the table.
+</p>
+<p>
+    <b>Methods of comparison:</b>
+    <ul>
+    <li> relative to x264 — <a href="/benchmarks/super-resolution-for-video-compression-methodology.html#methods">read about</a>,</li>
+    <li> relative to self — <a href="/benchmarks/super-resolution-for-video-compression-methodology.html#methods">read about</a>,</li>
+    <li> max .relative to self — <a href="/benchmarks/super-resolution-for-video-compression-methodology.html#methods">read about</a>.</li>
+    </ul>
+</p>
+
+<div id="leaderboard_pairs">
+    <p>     Metric: <label for="leaderboard_pairs_metric_selector"></label><select id="leaderboard_pairs_metric_selector" name="values">
+        <option>ERQAv1.0</option>
+        <option>Y-PSNR</option>
+        <option>YUV-MS-SSIM</option>
+        <option>VMAF</option>
+        <option>VMAF NEG</option>
+        <option>LPIPS</option>
+    </select></p>
+
+    <div class="datatable-container">
+    <div class="datatable-center">
+        <table id="leaderboard_pairs_table" class="display" style="background-color: #ffffff;">
+            <thead>
+            <tr style="font-size: large; background-color: #3d6f96">
+                <th style="background-color: #3d6f96">SR + codec</th>
+                <th style="background-color: #3d6f96">rel. x264</th>
+                <th style="background-color: #3d6f96">rel. self</th>
+                <th style="background-color: #3d6f96">max rel. self</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+
+    <script>
+    
+    function getName(alg) {
+
+        if (alg == "only_compressed") {
+            return "only compressed";
+        }
+        if (alg == "waifu2xAnime") {
+            return "waifu2x-anime";
+        }
+        if (alg == "waifu2xCunet") {
+            return "waifu2x-cunet";
+        }
+        if (alg == "topaz-amq-12") {
+            return "amq-12";
+        } 
+        if (alg == "topaz-ahq-11") {
+            return "ahq-11";
+        }
+        if (alg == "topaz-amqs-1") {
+            return "amqs-1";
+        }
+        return alg;
+    }
+
+
+    function getCodecName(codec) {
+        if (codec == 'libaom-av1') {
+            return "aomenc";
+        }
+        if (codec == 'H.266') {
+            return "VVenC";
+        }
+        if (codec == 'AVS3') {
+            return "uavs3e";
+        }
+
+        return codec;
+    }
+
+    function onChangeHelper() {
+        
+        var metric_select = document.getElementById("leaderboard_pairs_metric_selector");
+        var metricToName = ['ERQA', 'PSNR', 'MSSSIM', 'VMAFCLIPPED', 'VMAFNEG', 'LPIPS'];
+        var metric_name = metricToName[metric_select.selectedIndex];
+
+
+        let text = "<thead>\n" +
+        "<tr style=\"font-size: large; background-color: #3d6f96\">" +
+        "    <th style=\"background-color: #3d6f96\">Rank</th>" +
+        "    <th style=\"background-color: #3d6f96\">SR + codec</th>" +
+        "    <th style=\"background-color: #3d6f96\">rel. x264</th>" +
+        "    <th style=\"background-color: #3d6f96\">rel. self</th>" +
+        "    <th style=\"background-color: #3d6f96\">max rel. self</th>" +
+        "</tr>\n" +
+        "</thead>\n" +
+        "<tbody>\n";
+
+        let codecs = ['x264', 'x265', 'libaom-av1', 'H.266', 'AVS3'];
+
+        $.getJSON('../assets/json/benchmarks/sr-codecs/leaderboard.json', function (data) {
+            $.each( data[metric_name], function( alg, val ) {
+                
+                if (alg != "only_compressed" && alg != "only_compressed_540") {
+
+                    for (codec of codecs) {
+                        text += "<tr class=\"item\">\n";
+                        text += "<td>" + val[codec]["rank"] + "</td>\n<td>" + getName(alg) + " + " + getCodecName(codec) + "</td>\n";
+                        for (method of ['x264', 'self', 'best_self']) {
+                            text += "<td>" + val[codec][method].toFixed(3) + "</td>\n";
+                        }
+                        text += "</tr>\n";
+                    }
+                } else if (alg == "only_compressed") {
+                    for (codec of codecs) {
+                        text += "<tr class=\"item\">\n";
+                        text += "<td>" + val[codec]["rank"] + "</td>\n<td>only " + getCodecName(codec) + "</td>\n";
+                        for (method of ['x264', 'self', 'best_self']) {
+                            text += "<td>" + val[codec][method].toFixed(3) + "</td>\n";
+                        }
+                        text += "</tr>\n";
+                    }
+                }
+
+                    
+            });
+    
+            text += "</tbody>\n";
+            
+            let table = document.getElementById('leaderboard_pairs_table');
+            table.innerHTML = text;
+                
+
+            $('#leaderboard_pairs_table').DataTable().destroy();
+
+            $('#leaderboard_pairs_table').DataTable({
+                
+                lengthChange: false,
+                paging: false,
+                searching: false,
+                ordering: true,
+                order: [[2, 'asc']]
+            });
+        });
+    }  
+
+    document.getElementById("leaderboard_pairs_metric_selector").onchange = onChangeHelper;
+    document.getElementById("leaderboard_pairs_metric_selector").onchange = onChangeHelper;
+    onChangeHelper();
+
+    </script>
+
+</div>

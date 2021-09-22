@@ -1,0 +1,686 @@
+{
+    "MSSSIM": {
+        "bicubic": {
+            "AVS3": "street show",
+            "H.266": "animation clip",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "DBVSR": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "street show",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "DynaVSR-R": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "EGVSR": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "street show",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "iSeeBetter": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "street show",
+            "x264": "street show",
+            "x265": "skiing"
+        },
+        "LGFN": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "street show",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "only_compressed": {
+            "AVS3": "animation clip",
+            "H.266": "animation clip",
+            "libaom-av1": "animation clip",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "only_compressed_540": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "RealSR": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "SOF-VSR-BD": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "street show",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "SOF-VSR-BI": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "topaz-ahq-11": {
+            "AVS3": "animation clip",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "topaz-amq-12": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "topaz-amqs-1": {
+            "AVS3": "skiing",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "waifu2xAnime": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "waifu2xCunet": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "street show",
+            "x264": "skiing",
+            "x265": "animation clip"
+        }
+    },
+    "PSNR": {
+        "bicubic": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "DBVSR": {
+            "AVS3": "skiing",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "DynaVSR-R": {
+            "AVS3": "skiing",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "EGVSR": {
+            "AVS3": "animation clip",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "iSeeBetter": {
+            "AVS3": "animation clip",
+            "H.266": "street show",
+            "libaom-av1": "animation clip",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "LGFN": {
+            "AVS3": "skiing",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "only_compressed": {
+            "AVS3": "animation clip",
+            "H.266": "animation clip",
+            "libaom-av1": "animation clip",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "only_compressed_540": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "RealSR": {
+            "AVS3": "animation clip",
+            "H.266": "street show",
+            "libaom-av1": "animation clip",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "SOF-VSR-BD": {
+            "AVS3": "animation clip",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "SOF-VSR-BI": {
+            "AVS3": "skiing",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "topaz-ahq-11": {
+            "AVS3": "animation clip",
+            "H.266": "street show",
+            "libaom-av1": "animation clip",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "topaz-amq-12": {
+            "AVS3": "animation clip",
+            "H.266": "street show",
+            "libaom-av1": "animation clip",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "topaz-amqs-1": {
+            "AVS3": "animation clip",
+            "H.266": "street show",
+            "libaom-av1": "animation clip",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "waifu2xAnime": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "street show",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "waifu2xCunet": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "street show",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        }
+    },
+    "VMAFNEG": {
+        "bicubic": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "DBVSR": {
+            "AVS3": "street show",
+            "H.266": "animation clip",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "DynaVSR-R": {
+            "AVS3": "street show",
+            "H.266": "animation clip",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "EGVSR": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "street show",
+            "x265": "animation clip"
+        },
+        "iSeeBetter": {
+            "AVS3": "skiing",
+            "H.266": "animation clip",
+            "libaom-av1": "skiing",
+            "x264": "street show",
+            "x265": "skiing"
+        },
+        "LGFN": {
+            "AVS3": "street show",
+            "H.266": "animation clip",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "only_compressed": {
+            "AVS3": "animation clip",
+            "H.266": "animation clip",
+            "libaom-av1": "animation clip",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "only_compressed_540": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "RealSR": {
+            "AVS3": "street show",
+            "H.266": "animation clip",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "SOF-VSR-BD": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "street show",
+            "x265": "animation clip"
+        },
+        "SOF-VSR-BI": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "topaz-ahq-11": {
+            "AVS3": "skiing",
+            "H.266": "animation clip",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "topaz-amq-12": {
+            "AVS3": "skiing",
+            "H.266": "animation clip",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "topaz-amqs-1": {
+            "AVS3": "skiing",
+            "H.266": "animation clip",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "waifu2xAnime": {
+            "AVS3": "skiing",
+            "H.266": "animation clip",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "waifu2xCunet": {
+            "AVS3": "skiing",
+            "H.266": "animation clip",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "animation clip"
+        }
+    },
+    "ERQA": {
+        "bicubic": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "animation clip",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "DBVSR": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "animation clip",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "DynaVSR-R": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "animation clip",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "EGVSR": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "animation clip",
+            "x264": "street show",
+            "x265": "animation clip"
+        },
+        "iSeeBetter": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "animation clip",
+            "x264": "skiing",
+            "x265": "street show"
+        },
+        "LGFN": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "animation clip",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "only_compressed": {
+            "AVS3": "animation clip",
+            "H.266": "animation clip",
+            "libaom-av1": "animation clip",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "only_compressed_540": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "animation clip",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "RealSR": {
+            "AVS3": "animation clip",
+            "H.266": "animation clip",
+            "libaom-av1": "animation clip",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "SOF-VSR-BD": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "animation clip",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "SOF-VSR-BI": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "animation clip",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "topaz-ahq-11": {
+            "AVS3": "animation clip",
+            "H.266": "animation clip",
+            "libaom-av1": "animation clip",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "topaz-amq-12": {
+            "AVS3": "animation clip",
+            "H.266": "animation clip",
+            "libaom-av1": "animation clip",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "topaz-amqs-1": {
+            "AVS3": "animation clip",
+            "H.266": "animation clip",
+            "libaom-av1": "animation clip",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "waifu2xAnime": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "animation clip",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "waifu2xCunet": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "animation clip",
+            "x264": "skiing",
+            "x265": "animation clip"
+        }
+    },
+    "VMAFCLIPPED": {
+        "bicubic": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "DBVSR": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "DynaVSR-R": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "street show",
+            "x265": "skiing"
+        },
+        "EGVSR": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "street show",
+            "x265": "animation clip"
+        },
+        "iSeeBetter": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "street show",
+            "x265": "skiing"
+        },
+        "LGFN": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "only_compressed": {
+            "AVS3": "animation clip",
+            "H.266": "animation clip",
+            "libaom-av1": "animation clip",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "only_compressed_540": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "RealSR": {
+            "AVS3": "street show",
+            "H.266": "animation clip",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "SOF-VSR-BD": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "street show",
+            "x265": "animation clip"
+        },
+        "SOF-VSR-BI": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "topaz-ahq-11": {
+            "AVS3": "street show",
+            "H.266": "animation clip",
+            "libaom-av1": "street show",
+            "x264": "skiing",
+            "x265": "street show"
+        },
+        "topaz-amq-12": {
+            "AVS3": "street show",
+            "H.266": "animation clip",
+            "libaom-av1": "street show",
+            "x264": "street show",
+            "x265": "street show"
+        },
+        "topaz-amqs-1": {
+            "AVS3": "street show",
+            "H.266": "animation clip",
+            "libaom-av1": "street show",
+            "x264": "street show",
+            "x265": "street show"
+        },
+        "waifu2xAnime": {
+            "AVS3": "street show",
+            "H.266": "animation clip",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "waifu2xCunet": {
+            "AVS3": "street show",
+            "H.266": "animation clip",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        }
+    },
+    "LPIPS": {
+        "bicubic": {
+            "AVS3": "skiing",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "DBVSR": {
+            "AVS3": "skiing",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "DynaVSR-R": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "EGVSR": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "iSeeBetter": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "street show",
+            "x265": "skiing"
+        },
+        "LGFN": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "only_compressed": {
+            "AVS3": "animation clip",
+            "H.266": "animation clip",
+            "libaom-av1": "animation clip",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "only_compressed_540": {
+            "AVS3": "skiing",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "RealSR": {
+            "AVS3": "skiing",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "SOF-VSR-BD": {
+            "AVS3": "street show",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "SOF-VSR-BI": {
+            "AVS3": "skiing",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "skiing"
+        },
+        "topaz-ahq-11": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "street show",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "topaz-amq-12": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "street show",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "topaz-amqs-1": {
+            "AVS3": "street show",
+            "H.266": "street show",
+            "libaom-av1": "street show",
+            "x264": "animation clip",
+            "x265": "animation clip"
+        },
+        "waifu2xAnime": {
+            "AVS3": "skiing",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "animation clip"
+        },
+        "waifu2xCunet": {
+            "AVS3": "skiing",
+            "H.266": "skiing",
+            "libaom-av1": "skiing",
+            "x264": "skiing",
+            "x265": "animation clip"
+        }
+    }
+}

@@ -234,6 +234,10 @@
         <option>Bob-Weave Deinterlacer</option>
         <option>Real-Time Deep Deinterlacer</option>
         <option>Motion and Area Pixel Deinterlacer</option>
+        <option>DfRes 119000</option>
+        <option>DfRes 121000 G2e 3</option>
+        <option>DfRes 122000 G2e 3</option>
+        <option>DfRes 61000</option>
         <option>Vapoursynth EEDI3</option>
         <option>Kernel Deinterlacer</option>
         <option>Kernel Deinterlacer (optimal parameters)</option>
@@ -256,13 +260,17 @@
         <option>Bob-Weave Deinterlacer</option>
         <option>Real-Time Deep Deinterlacer</option>
         <option>Motion and Area Pixel Deinterlacer</option>
+        <option>DfRes 119000</option>
+        <option>DfRes 121000 G2e 3</option>
+        <option selected="selected">DfRes 122000 G2e 3</option>
+        <option>DfRes 61000</option>
         <option>Vapoursynth EEDI3</option>
         <option>Kernel Deinterlacer</option>
         <option>Kernel Deinterlacer (optimal parameters)</option>
         <option>Motion Compensation Deinterlacer</option>
         <option>MSU Deinterlacer</option>
         <option>Muksun Deinterlacer</option>
-        <option selected="selected">NNEDI</option>
+        <option>NNEDI</option>
         <option>PAL Interpolation</option>
         <option>Vapoursynth TDeintMod</option>
         <option>Weston 3-Field Deinterlacer</option>
@@ -277,7 +285,7 @@
             <h3 style="text-align: center">GT</h3>
             <div class="img-zoom-container">
                 <img id="imagegt" style="width: 100%; height: 12vw"
-                     src="https://storage.videoprocessing.ai/benchmarks/deinterlacer/imgs_new/0/gt.png">
+                     src="https://storage.videoprocessing.ai/benchmarks/deinterlacer/imgs/0/gt.png">
                 <div id="resultgt" class="img-zoom-result" style="width: 100%; padding-top: 100%"></div>
                 <div id="fake_vqmt" class="img-zoom-result" style="width: 100%;">
                     <p style="font-size: large; text-align: center">In this row you can see VQMT PSNR Visualization</p>
@@ -285,19 +293,19 @@
             </div>
         </div>
         <div class="column">
-            <h3 id="comp_label1" style="text-align: center">MSU Deinterlacer</h3>
+            <h3 id="comp_label1" style="text-align: center">MSU</h3>
             <div class="img-zoom-container">
                 <img id="image1" style="width: 100%; height: 12vw"
-                     src="https://storage.videoprocessing.ai/benchmarks/deinterlacer/imgs_new/0/msudeint.png">
+                     src="https://storage.videoprocessing.ai/benchmarks/deinterlacer/imgs/0/msudeint.png">
                 <div id="result1" class="img-zoom-result" style="width: 100%; padding-top: 100%"></div>
                 <div id="vqmt1" class="img-zoom-result" style="width: 100%; padding-top: 100%"></div>
             </div>
         </div>
         <div class="column">
-            <h3 id="comp_label2" style="text-align: center">NNEDI</h3>
+            <h3 id="comp_label2" style="text-align: center">DfRes 122000 G2e 3</h3>
             <div class="img-zoom-container">
                 <img id="image2" style="width: 100%; height: 12vw"
-                     src="https://storage.videoprocessing.ai/benchmarks/deinterlacer/imgs_new/0/nnedi.png">
+                     src="https://storage.videoprocessing.ai/benchmarks/deinterlacer/imgs/0/nnedi.png">
                 <div id="result2" class="img-zoom-result" style="width: 100%; padding-top: 100%"></div>
                 <div id="vqmt2" class="img-zoom-result" style="width: 100%; padding-top: 100%"></div>
             </div>
@@ -309,15 +317,18 @@
 
             function onChangeHelper() {
                 let video_numbers = [0, 8, 11, 12, 14, 15, 16, 23, 26, 27];
-                let bignumToName = ['asvzzzdeint', 'bob', 'bwdif', 'deepdeint', 'deintmap', 'eedi3',
-                    'kerndeint', 'kerndeint_tuned', 'mcdeint', 'msudeint', 'muksun', 'nnedi',
-                    'palinter', 'tdeint', 'w3fdif', 'yadif'];
-                let bignumToOfficialName = ['ASVZZZ Deinterlacer', 'Bob', 'Bob-Weave Deinterlacer',
-                    'Real-Time Deep Deinterlacer', 'Motion and Area Pixel Deinterlacer',
-                    'Vapoursynth EEDI3', 'Kernel Deinterlacer',
-                    'Kernel Deinterlacer (optimal parameters)', 'Motion Compensation Deinterlacer',
-                    'MSU Deinterlacer', 'Muksun Deinterlacer', 'NNEDI', 'PAL Interpolation',
-                    'Vapoursynth TDeintMod', 'Weston 3-Field Deinterlacer', 'YADIF'];
+                let bignumToName = ['asvzzzdeint', 'bob', 'bwdif', 'deepdeint', 'deintmap', 'dfres_119000',
+                    'dfres_121000_G2e_3', 'dfres_122000_G2e_3', 'dfres_61000', 'eedi3', 'kerndeint',
+                    'kerndeint_tuned', 'mcdeint', 'msudeint', 'muksun', 'nnedi', 'palinter',
+                    'tdeint', 'w3fdif', 'yadif'];
+                let bignumToOfficialName = ['ASVZZZ', 'Bob', 'Bob-Weave',
+                    'Real-Time Deep', 'Motion and Area Pixel',
+                    'DfRes 119000', 'DfRes 121000 G2e 3', 'DfRes 122000 G2e 3', 'DfRes 61000',
+                    'VS EEDI3', 'Kernel',
+                    'Kernel (optimal)',
+                    'Motion Compensation', 'MSU',
+                    'Muksun', 'NNEDI', 'PAL Interpolation',
+                    'VS TDeintMod', 'Weston 3-Field', 'YADIF'];
 
                 let numselect = document.getElementById("comp_num_selector");
                 let selected_video = video_numbers[numselect.selectedIndex];
@@ -338,12 +349,12 @@
 
                 let img_prefix = "https://storage.videoprocessing.ai/benchmarks/deinterlacer/";
 
-                let src_gt = img_prefix + "imgs_new/" + selected_video + "/gt.png";
-                let src1 = img_prefix + "imgs_new/" + selected_video + "/" + name1 + ".png";
-                let src2 = img_prefix + "imgs_new/" + selected_video + "/" + name2 + ".png";
+                let src_gt = img_prefix + "imgs/" + selected_video + "/gt.png";
+                let src1 = img_prefix + "imgs/" + selected_video + "/" + name1 + ".png";
+                let src2 = img_prefix + "imgs/" + selected_video + "/" + name2 + ".png";
 
-                let vqmt1_src = img_prefix + "vqmts_new/" + selected_video + "/" + name1 + ".png";
-                let vqmt2_src = img_prefix + "vqmts_new/" + selected_video + "/" + name2 + ".png";
+                let vqmt1_src = img_prefix + "vqmts/" + selected_video + "/" + name1 + ".png";
+                let vqmt2_src = img_prefix + "vqmts/" + selected_video + "/" + name2 + ".png";
 
                 let comp_label1 = document.getElementById("comp_label1");
                 let comp_label2 = document.getElementById("comp_label2");

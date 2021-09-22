@@ -72,11 +72,15 @@ $(function () {
 			data: [[93.246, 1.91]]
 		},
 		{
+			name: 'DfRes 119000',
+			data: [[94.252, 0.0]]
+		},
+		{
 			name: 'PAL Interpolation',
 			data: [[82.662, 2.85]]
 		},
 		{
-			name: 'VapourSynth EEDI3',
+			name: 'Vapoursynth EEDI3',
 			data: [[90.122, 51.9]]
 		},
 		{
@@ -86,6 +90,10 @@ $(function () {
 		{
 			name: 'Motion and Area Pixel Deinterlacer',
 			data: [[88.882, 2.15]]
+		},
+		{
+			name: 'DfRes 122000 G2e 3',
+			data: [[94.848, 0.0]]
 		},
 		{
 			name: 'YADIF',
@@ -100,7 +108,7 @@ $(function () {
 			data: [[86.873, 1.9]]
 		},
 		{
-			name: 'VapourSynth TDeintMod',
+			name: 'Vapoursynth TDeintMod',
 			data: [[91.044, 50.29]]
 		},
 		{
@@ -126,6 +134,14 @@ $(function () {
 		{
 			name: 'Muksun Deinterlacer',
 			data: [[86.873, 1.95]]
+		},
+		{
+			name: 'DfRes 121000 G2e 3',
+			data: [[94.768, 0.0]]
+		},
+		{
+			name: 'DfRes 61000',
+			data: [[94.865, 0.0]]
 		},
 		{
 			name: 'Kernel Deinterlacer',

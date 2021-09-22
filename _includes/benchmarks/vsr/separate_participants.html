@@ -69,12 +69,28 @@
                     <td>2018</td>
                 </tr>
                 <tr class="item">
+                    <td><a href="#iseebetter">iSeeBetter</a></td>
+                    <td style="color: #218838">Yes</td>
+                    <td>Recurrent architecture + optical flow</td>
+                    <td></td>
+                    <td>PyTorch</td>
+                    <td>2020</td>
+                </tr>
+                <tr class="item">
                     <td><a href="#lgfn">LGFN</a></td>
                     <td style="color: #218838">Yes</td>
                     <td>Deformable convolution</td>
                     <td><a href="https://paperswithcode.com/dataset/vimeo90k-1">Vimeo-90k</a></td>
                     <td>PyTorch</td>
                     <td>2020</td>
+                </tr>
+                <tr class="item">
+                    <td><a href="#rbpn">RBPN</a></td>
+                    <td style="color: #218838">Yes</td>
+                    <td>Recurrent architecture + optical flow</td>
+                    <td><a href="https://paperswithcode.com/dataset/vimeo90k-1">Vimeo-90k</a></td>
+                    <td>PyTorch</td>
+                    <td>2019</td>
                 </tr>
                 <tr class="item">
                     <td><a href="#rrn">RRN</a></td>
@@ -140,6 +156,14 @@
                     <td>PyTorch</td>
                     <td>2020</td>
                 </tr>
+                <tr class="item">
+                    <td><a href="#tmnet">TMNet</a></td>
+                    <td style="color: #218838">Yes</td>
+                    <td>Deformable convolution</td>
+                    <td><a href="https://paperswithcode.com/dataset/vimeo90k-1">Vimeo-90k</a></td>   
+                    <td>PyTorch</td>
+                    <td>2021</td>
+                </tr>
             </tbody>
         </table>
 
@@ -155,11 +179,6 @@
 
 <h2 id="d3dnet">D3Dnet</h2>
 <ul>Use a deformable 3D convolution to compensate the motion between frames implicitly.</ul>
-<!-- <div class="center">
-	<div>
-		<img src="/assets/img/benchmarks/vsr/d3dnet_1.png">
-	</div>
-</div> -->
 <div class="center">
 	<div style="width:75%">
 		<img src="/assets/img/benchmarks/vsr/d3dnet.jpg">
@@ -219,6 +238,15 @@
 <ul>Added to the benchmark by MSU</ul>
 <ul>Links: <a href="https://github.com/xinntao/ESRGAN">GitHub</a>, <a href="https://doi.org/10.1007/978-3-030-11021-5_5">paper</a></ul>
 
+<h2 id="iseebetter">iSeeBetter</h2>
+<div class="center">
+	<div>
+		<img src="/assets/img/benchmarks/vsr/iseebetter.jpg">
+	</div>
+</div>
+<ul>Added to the benchmark by MSU</ul>
+<ul>Links: <a href="https://github.com/amanchadha/iSeeBetter">GitHub</a>, <a href="https://arxiv.org/abs/2006.11161">paper</a></ul>
+
 <h2 id="lgfn">LGFN</h2>
 <ul>Use deformable convolutions with decreased multi-dilation convolution units (DMDCUs) to align frames explicitly. Fuse features from local and global fusion modules.</ul>
 <div class="center">
@@ -228,6 +256,15 @@
 </div>
 <ul>Added to the benchmark by MSU</ul>
 <ul>Links: <a href="https://github.com/BIOINSu/LGFN">GitHub</a>, <a href="https://doi.org/10.1109/ACCESS.2020.3025780">paper</a></ul>
+
+<h2 id="rbpn">RBPN</h2>
+<div class="center">
+	<div>
+		<img src="/assets/img/benchmarks/vsr/rbpn.jpg">
+	</div>
+</div>
+<ul>Added to the benchmark by MSU</ul>
+<ul>Links: <a href="https://github.com/alterzero/RBPN-PyTorch">GitHub</a>, <a href="https://arxiv.org/abs/1903.10128">paper</a></ul>
 
 <h2 id="real-esrgan">Real-ESRGAN</h2>
 <ul>Added to the benchmark by MSU</ul>
@@ -298,3 +335,13 @@
 </div>
 <ul>Added to the benchmark by MSU</ul>
 <ul>Links: <a href="https://github.com/junpan19/VSR_TGA">GitHub</a>, <a href="https://doi.org/10.1109/cvpr42600.2020.00803">paper</a></ul>
+
+<h2 id="tmnet">TMNet</h2>
+<ul>Temporal Modulation Network was trained for Space-Time Video Super Resolution. The temporal information is integrated by deformable convolution with the multi-frame input.</ul>
+<div class="center">
+	<div>
+		<img src="/assets/img/benchmarks/vsr/tmnet.jpg">
+	</div>
+</div>
+<ul>Added to the benchmark by the author, Gang Xu.</ul>
+<ul>Links: <a href="https://github.com/CS-GangXu/TMNet">GitHub</a>, <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Xu_Temporal_Modulation_Network_for_Controllable_Space-Time_Video_Super-Resolution_CVPR_2021_paper.pdf">paper</a></ul>

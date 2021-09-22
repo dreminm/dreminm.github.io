@@ -13,7 +13,7 @@ $(function () {
                 text: 'SSIM on sequence # 10'
             },
             xAxis: {
-                categories: ['Real-Time Deep Deinterlacer', 'Bob-Weave Deinterlacer', 'VapourSynth TDeintMod', 'MSU Deinterlacer', 'YADIF', 'VapourSynth EEDI3', 'NNEDI', 'Kernel Deinterlacer', 'Muksun Deinterlacer', 'Weston 3-Field Deinterlacer', 'Kernel Deinterlacer (optimal parameters)', 'ASVZZZ Deinterlacer', 'Motion and Area Pixel Deinterlacer', 'Bob', 'PAL Interpolation', 'Motion Compensation Deinterlacer', ], 
+                categories: ['NNEDI', 'DfRes 122000 G2e 3', 'DfRes 121000 G2e 3', 'DfRes 119000', 'Real-Time Deep Deinterlacer', 'Vapoursynth EEDI3', 'Bob-Weave Deinterlacer', 'Vapoursynth TDeintMod', 'DfRes 61000', 'MSU Deinterlacer', 'YADIF', 'Bob', 'Motion and Area Pixel Deinterlacer', 'Kernel Deinterlacer', 'Kernel Deinterlacer (optimal parameters)', 'Weston 3-Field Deinterlacer', 'Muksun Deinterlacer', 'ASVZZZ Deinterlacer', 'PAL Interpolation', 'Motion Compensation Deinterlacer', ], 
             },
             yAxis: {
                 title: {
@@ -30,7 +30,7 @@ $(function () {
             },
             series: [{
                     name: 'SSIM',
-                    data: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.999, 0.999, 0.999, 0.999, 0.999, 0.999, 0.999, 0.998, 0.996, ], 
+                    data: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.999, 0.999, 0.999, 0.999, 0.999, 0.999, 0.999, 0.998, 0.996, ], 
             }]
             });
     })

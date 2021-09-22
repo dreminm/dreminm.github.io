@@ -1,0 +1,77 @@
+<style>
+tt {
+    font-family: "Lucida Console", "Menlo", "Monaco", "Courier",
+                 monospace;
+  }
+</style>
+
+<div>
+    <table align="center" width="100%" cellpadding="10" style="border-collapse:collapse; table-layout: fixed; word-break: break-all;">
+        <tr>
+            <td bgcolor="#F4F6F6" colspan="2" width="30%" style="word-break: break-all;">
+                <h3><b>1. Download input data</b></h3>
+                <br>
+                <i><font size="=1"></font></i>
+            </td>
+            <td bgcolor="#F4F6F6" style="word-break: break-all;">
+                <b>Download input low-resolution videos as sequences of frames in png format
+                    <br>
+                    There are 2 available options:</b>
+                    <ul>a. Download 1 folder with all videos, joined in one sequence <a 
+                        href="https://drive.google.com/file/d/1WlvctghSqg832jg4gs4PQkFxvUST6nZQ/view?usp=sharing">here</a>.<br>Neighboring videos are separated 
+                        by 5 black frames, which will be skipped for evaluation.</ul>
+                    <ul>b. If you worry this strategy can decrease your performance, you can download 105 folders<br>with each video <a
+                            href="https://drive.google.com/file/d/15aszMfzMc3aeg8iLwynMoTHJa11_zbgl/view?usp=sharing">here</a>.</ul>
+                   
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+            </td>
+            <td>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2" bgcolor="#F4F6F6" style="border-right-style: none" width="15%" style="word-break: break-all;">
+                <h3><b>2. Apply your algorithm</b></h3>
+            </td>
+            <td bgcolor="#F4F6F6" style="word-break: break-all;">
+                <b>Restore high-resolution frames with your algorithm.</b><br>
+                You can also send us the code of your method or the executable file and we will run it ourselves.<br>
+                If your SR can only increase the resolution by 4 times, then you can downscale the result by 2 times<br>
+                using the following FFmpeg command:<br>
+                <tt>ffmpeg -i {4x_path} -vf “scale=1920:1080" -sws_flags gauss {2x_path} </tt>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+            </td>
+            <td>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2" bgcolor="#F4F6F6" style="border-right-style: none" width="15%" style="word-break: break-all;">
+                <h3><b>3. Send us result</b></h3>
+            </td>
+            <td bgcolor="#F4F6F6" style="word-break: break-all;">
+                <b>Send us an email to <a href="mailto:sr-codecs-benchmark@videoprocessing.ai">sr-codecs-benchmark@videoprocessing.ai</a>
+                    with the following information: </b>
+                    <ul><b>A. </b>Name of your method that will be specified in our benchmark</ul>
+                    <ul><b>B. </b>Link to the cloud drive (Google Drive, OneDrive, Dropbox, etc.), containing output frames.<br>
+                    </ul>
+                    <ul><b>C. </b>(Optional) Any additional information about the method:
+                            <ul>1. Full name of your model</ul>
+                            <ul>2. The parameter set that was used</ul>
+                            <ul>3. A link to the code of your model, if it is available</ul>
+                            <ul>4. A link to the paper about your model</ul>
+                            <ul>5. Execution time of your algorithm and information about used GPU</ul>
+                            <ul>6. Any other additional information</ul>
+                    </ul>
+            </td>
+        </tr>
+    </table>
+</div>

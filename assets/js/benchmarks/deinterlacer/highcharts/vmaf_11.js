@@ -13,7 +13,7 @@ $(function () {
                 text: 'VMAF on sequence # 11'
             },
             xAxis: {
-                categories: ['VapourSynth EEDI3', 'NNEDI', 'VapourSynth TDeintMod', 'Real-Time Deep Deinterlacer', 'Bob', 'Weston 3-Field Deinterlacer', 'Kernel Deinterlacer (optimal parameters)', 'Kernel Deinterlacer', 'MSU Deinterlacer', 'Bob-Weave Deinterlacer', 'Motion and Area Pixel Deinterlacer', 'YADIF', 'Muksun Deinterlacer', 'ASVZZZ Deinterlacer', 'PAL Interpolation', 'Motion Compensation Deinterlacer', ], 
+                categories: ['DfRes 61000', 'Vapoursynth EEDI3', 'NNEDI', 'DfRes 121000 G2e 3', 'Vapoursynth TDeintMod', 'DfRes 122000 G2e 3', 'Real-Time Deep Deinterlacer', 'Bob', 'Weston 3-Field Deinterlacer', 'Kernel Deinterlacer (optimal parameters)', 'Kernel Deinterlacer', 'MSU Deinterlacer', 'Bob-Weave Deinterlacer', 'DfRes 119000', 'Motion and Area Pixel Deinterlacer', 'YADIF', 'Muksun Deinterlacer', 'ASVZZZ Deinterlacer', 'PAL Interpolation', 'Motion Compensation Deinterlacer', ], 
             },
             yAxis: {
                 title: {
@@ -30,7 +30,7 @@ $(function () {
             },
             series: [{
                     name: 'VMAF',
-                    data: [57.53, 57.408, 56.526, 56.042, 54.469, 54.414, 54.226, 53.622, 53.004, 52.708, 46.852, 44.696, 43.595, 43.595, 38.807, 33.179, ], 
+                    data: [58.107, 57.53, 57.408, 56.588, 56.526, 56.211, 56.042, 54.469, 54.414, 54.226, 53.622, 53.004, 52.708, 52.044, 46.852, 44.696, 43.595, 43.595, 38.807, 33.179, ], 
             }]
             });
     })

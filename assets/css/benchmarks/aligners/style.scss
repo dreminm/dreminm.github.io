@@ -17,13 +17,14 @@
 
 .datatable-container {
   overflow-x: auto;
-
+  width: 100%;
   table {
     display: table;
     background-color: #ffffff;
     border-spacing: 0;
     border: 1px solid #ddd;
     border-collapse: collapse;
+    width: 100% !important;
 
     th {
       background-color: #3d6f96;

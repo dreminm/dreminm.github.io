@@ -13,7 +13,7 @@ $(function () {
                 text: 'PSNR on sequence # 1'
             },
             xAxis: {
-                categories: ['Real-Time Deep Deinterlacer', 'NNEDI', 'VapourSynth EEDI3', 'MSU Deinterlacer', 'Bob', 'VapourSynth TDeintMod', 'Kernel Deinterlacer (optimal parameters)', 'Bob-Weave Deinterlacer', 'Kernel Deinterlacer', 'Weston 3-Field Deinterlacer', 'YADIF', 'Muksun Deinterlacer', 'ASVZZZ Deinterlacer', 'Motion and Area Pixel Deinterlacer', 'PAL Interpolation', 'Motion Compensation Deinterlacer', ], 
+                categories: ['DfRes 122000 G2e 3', 'DfRes 121000 G2e 3', 'DfRes 61000', 'DfRes 119000', 'Real-Time Deep Deinterlacer', 'NNEDI', 'Vapoursynth EEDI3', 'MSU Deinterlacer', 'Bob', 'Vapoursynth TDeintMod', 'Kernel Deinterlacer (optimal parameters)', 'Bob-Weave Deinterlacer', 'Kernel Deinterlacer', 'Weston 3-Field Deinterlacer', 'YADIF', 'Muksun Deinterlacer', 'ASVZZZ Deinterlacer', 'Motion and Area Pixel Deinterlacer', 'PAL Interpolation', 'Motion Compensation Deinterlacer', ], 
             },
             yAxis: {
                 title: {
@@ -30,7 +30,7 @@ $(function () {
             },
             series: [{
                     name: 'PSNR',
-                    data: [37.634, 37.61, 37.415, 37.312, 36.994, 36.968, 36.836, 36.828, 36.597, 36.524, 36.423, 35.949, 35.949, 35.146, 33.327, 30.365, ], 
+                    data: [38.396, 38.374, 38.252, 38.232, 37.634, 37.61, 37.415, 37.312, 36.994, 36.968, 36.836, 36.828, 36.597, 36.524, 36.423, 35.949, 35.949, 35.146, 33.327, 30.365, ], 
             }]
             });
     })

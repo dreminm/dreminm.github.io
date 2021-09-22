@@ -250,7 +250,9 @@
         <option>DynaVSR-V</option>
         <option>ESPCN</option>
         <option>ESRGAN</option>
+        <option>iSeeBetter</option>
         <option>LGFN</option>
+        <option>RBPN</option>
         <option>Real-ESRGAN</option>
         <option>Real-ESRNet</option>
         <option>RealSR</option>
@@ -260,6 +262,7 @@
         <option>SOF-VSR-BI</option>
         <option>TDAN</option>
         <option>TGA</option>
+        <option>TMNet</option>
     </select>    Model 2: <label for="comp_model2_selector"></label><select id="comp_model2_selector"
                                                                                 name="values">
         <option>D3Dnet</option>
@@ -270,7 +273,9 @@
         <option>DynaVSR-V</option>
         <option>ESPCN</option>
         <option>ESRGAN</option>
+        <option>iSeeBetter</option>
         <option>LGFN</option>
+        <option>RBPN</option>
         <option>Real-ESRGAN</option>
         <option>Real-ESRNet</option>
         <option>RealSR</option>
@@ -280,6 +285,7 @@
         <option>SOF-VSR-BI</option>
         <option>TDAN</option>
         <option>TGA</option>
+        <option>TMNet</option>
     </select>    Model 3: <label for="comp_model3_selector"></label><select id="comp_model3_selector"
                                                                                 name="values">
         <option>D3Dnet</option>
@@ -290,7 +296,9 @@
         <option>DynaVSR-V</option>
         <option>ESPCN</option>
         <option>ESRGAN</option>
+        <option>iSeeBetter</option>
         <option>LGFN</option>
+        <option>RBPN</option>
         <option>Real-ESRGAN</option>
         <option>Real-ESRNet</option>
         <option>RealSR</option>
@@ -299,7 +307,8 @@
         <option>SOF-VSR-BD</option>
         <option>SOF-VSR-BI</option>
         <option>TDAN</option>  
-        <option>TGA</option>                           
+        <option>TGA</option>   
+        <option>TMNet</option>                        
     </select></p>
     <p style="text-align: center"><b>Drag a red rectangle in the area, which you want to crop.</b></p>
 
@@ -358,8 +367,8 @@
                 let frameToName = ["frame_052", "frame_052", "frame_052", "frame_052",
                     "frame_069", "frame_069", "frame_069", "frame_069", 
                     "frame_049", "frame_049", "frame_049", "frame_049", ];
-                let numToName = ['D3Dnet', 'DBVSR', 'DUF-16L', 'DUF-28L', 'DynaVSR-R', 'DynaVSR-V', 'ESPCN', 'ESRGAN', 'LGFN', 'Real-ESRGAN', 'Real-ESRNet',
-                    'RealSR', 'RRN-5L', 'RRN-10L' ,'SOF-VSR-BD', 'SOF-VSR-BI', 'TDAN', 'TGA'];
+                let numToName = ['D3Dnet', 'DBVSR', 'DUF-16L', 'DUF-28L', 'DynaVSR-R', 'DynaVSR-V', 'ESPCN', 'ESRGAN', 'iSeeBetter', 'LGFN', 'RBPN', 
+                    'Real-ESRGAN', 'Real-ESRNet', 'RealSR', 'RRN-5L', 'RRN-10L' ,'SOF-VSR-BD', 'SOF-VSR-BI', 'TDAN', 'TGA', 'TMNet'];
                 let partToName = ['part1', 'part2', 'part3', 'part4', 'part5', 'part6', 'part7', 'part8'];
 
                 let numselect = document.getElementById("comp_num_selector");

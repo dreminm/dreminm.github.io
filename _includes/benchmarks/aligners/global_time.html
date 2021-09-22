@@ -1,24 +1,16 @@
+<div class="tabs">
+    <button class="global-table-tablinks" onclick="openTable(event, 'global-light', 'global')" style="background-color: #3d6f96; color: white">Light</button>
+    <button class="global-table-tablinks" onclick="openTable(event, 'global-medium-geom', 'global')">Medium-1</button>
+    <button class="global-table-tablinks" onclick="openTable(event, 'global-medium-color', 'global')">Medium-2</button>
+    <button class="global-table-tablinks" onclick="openTable(event, 'global-hard', 'global')">Hard</button>
+</div>
 <p style="font-weight: bold">Leaderboard</p>
-<div class="datatable-container">
+<div class="datatable-container global global-light" style="position:absolute; z-index: 1;">
     <div class="datatable-center">
-        <table id="global-table" class="table-fixed" style="background-color: #d4d4d4">
+        <table id="table-global-light" class="table-fixed" style="background-color: #d4d4d4">
             <thead>
             <tr style="font-size: large; background-color: #3d6f96">
-                <th rowspan="2" style="background-color: #3d6f96">Name</th>
-                <th colspan="3" style="background-color: #3d6f96">Light preset</th>
-                <th colspan="3" style="background-color: #3d6f96">Medium-1 preset</th>
-                <th colspan="3" style="background-color: #3d6f96">Medium-2 preset</th>
-                <th colspan="3" style="background-color: #3d6f96">Hard preset</th>
-            </tr>
-            <tr>
-                <th style="background-color: #3d6f96">F-1 score</th>
-                <th style="background-color: #3d6f96">Precision</th>
-                <th style="background-color: #3d6f96">Recall</th>
-                <th style="background-color: #3d6f96">F-1 score</th>
-                <th style="background-color: #3d6f96">Precision</th>
-                <th style="background-color: #3d6f96">Recall</th><th style="background-color: #3d6f96">F-1 score</th>
-                <th style="background-color: #3d6f96">Precision</th>
-                <th style="background-color: #3d6f96">Recall</th>
+                <th style="background-color: #3d6f96">Name</th>
                 <th style="background-color: #3d6f96">F-1 score</th>
                 <th style="background-color: #3d6f96">Precision</th>
                 <th style="background-color: #3d6f96">Recall</th>
@@ -27,17 +19,63 @@
         </table>
     </div>
 </div>
+<div class="datatable-container global global-medium-geom" style="position:absolute;">
+    <div class="datatable-center">
+        <table id="table-global-medium-geom" class="table-fixed" style="background-color: #d4d4d4">
+            <thead>
+            <tr style="font-size: large; background-color: #3d6f96">
+                <th style="background-color: #3d6f96">Name</th>
+                <th style="background-color: #3d6f96">F-1 score</th>
+                <th style="background-color: #3d6f96">Precision</th>
+                <th style="background-color: #3d6f96">Recall</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+<div class="datatable-container global global-medium-color" style="position:absolute;">
+    <div class="datatable-center">
+        <table id="table-global-medium-color" class="table-fixed" style="background-color: #d4d4d4">
+            <thead>
+            <tr style="font-size: large; background-color: #3d6f96">
+                <th style="background-color: #3d6f96">Name</th>
+                <th style="background-color: #3d6f96">F-1 score</th>
+                <th style="background-color: #3d6f96">Precision</th>
+                <th style="background-color: #3d6f96">Recall</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+<div class="datatable-container global global-hard">
+    <div class="datatable-center">
+        <table id="table-global-hard" class="table-fixed" style="background-color: #d4d4d4">
+            <thead>
+            <tr style="font-size: large; background-color: #3d6f96">
+                <th style="background-color: #3d6f96">Name</th>
+                <th style="background-color: #3d6f96">F-1 score</th>
+                <th style="background-color: #3d6f96">Precision</th>
+                <th style="background-color: #3d6f96">Recall</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+
+
 <p style="font-weight: bold">Charts</p>
+<select name="Method's name" id="filter-chart-global"></select>
 <p style="text-align: center">Highlight the plot region where you want to zoom in</p>
-<div id="div2-f1-light-wrapper" class="mobile-plots">
-    <div id="div2-f1-light" class="highcharts-figure"></div>
+<div id="chart-global-light-wrapper" class="mobile-plots global global-light" style="position:absolute; z-index: 1;">
+    <div id="chart-global-light" class="highcharts-figure"></div>
 </div>
-<div id="div2-f1-medium-1-wrapper" class="mobile-plots">
-    <div id="div2-f1-medium-1" class="highcharts-figure"></div>
+<div id="chart-global-medium-geom-wrapper" class="mobile-plots global global-medium-geom" style="position:absolute;">
+    <div id="chart-global-medium-geom" class="highcharts-figure"></div>
 </div>
-<div id="div2-f1-medium-2-wrapper" class="mobile-plots">
-    <div id="div2-f1-medium-2" class="highcharts-figure"></div>
+<div id="chart-global-medium-color-wrapper" class="mobile-plots global global-medium-color" style="position:absolute;">
+    <div id="chart-global-medium-color" class="highcharts-figure"></div>
 </div>
-<div id="div2-f1-hard-wrapper" class="mobile-plots">
-    <div id="div2-f1-hard" class="highcharts-figure"></div>
+<div id="chart-global-hard-wrapper" class="mobile-plots global global-hard">
+    <div id="chart-global-hard" class="highcharts-figure"></div>
 </div>
