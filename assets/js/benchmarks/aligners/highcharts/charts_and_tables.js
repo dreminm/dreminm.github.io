@@ -332,12 +332,18 @@ $(document).ready(function () {
                 line.xAxis.title.text = 'Test pair';
                 line.yAxis.title.text = 'F1-score';
                 for (const [key, value] of Object.entries(data[keys[iter]])) {
-                    line.series.push({
-                        name: key,
-                        id: 'mainSeries',
-                        dataSorting: {enabled: true, sortKey: 'y'},
-                        data: value["points"]
-                    });
+                    var amount = 0;
+                    var new_data1 = [];
+                    var new_data2 = [];
+                    for (let i = 0; i < value["points"].length; ++i) {
+                        if (typeof (value["points"][i]) == "number") {
+                            new_data1.push(value["points"][i]);
+                        } else {
+                            new_data2.push(value["points"][i]);
+                        }
+                        amount = i;
+                    }
+                    line.series.push({name: key, id: 'mainSeries', dataSorting: {enabled: true}, data: new_data1});
                     table_data.push([key, data[keys[iter]][key]["f1"].toFixed(4), data[keys[iter]][key]["precision"].toFixed(4), data[keys[iter]][key]["recall"].toFixed(4)]);
                 }
                 new Highcharts.Chart(line);
